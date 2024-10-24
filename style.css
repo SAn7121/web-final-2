@@ -1,0 +1,264 @@
+/* Hecho: colores, box model, display, medidas, position, fuentes */
+/* Selector universal */
+* {
+    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho y alto total */
+}
+
+/* Encabezado */
+header {
+    position: sticky; /* Fija el encabezado en la parte superior */
+    top: 0; /* Coloca el encabezado en la parte superior */
+    background-color: #EAF2EF; /* Color de fondo del encabezado */
+    padding: 15px; /* Espaciado interno */
+    display: flex; /* Uso de flexbox para alinear elementos */
+    justify-content: space-around; /* Espacia los elementos del encabezado */
+    align-items: center; /* Alinea verticalmente los elementos */
+    z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+}
+
+
+/* Logo */
+.logo img {
+    width: 250px; /* Ajusta el tamaño según lo necesites */
+    height: auto; /* Mantiene la proporción de la imagen */
+    vertical-align: middle; /* Alinea la imagen verticalmente */
+}
+
+/* Navegación */
+nav ul {
+    list-style-type: none; /* Elimina el estilo de lista */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el padding */
+    display:flex; /* Usa flexbox para el menú */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+nav ul li a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #521945; /* Color de los enlaces */
+    padding: 10px; /* Añade espaciado interno a los enlaces */
+}
+
+/* Iconos */
+.icons a {
+    margin-left: 15px; /* Espaciado entre iconos */
+}
+.icons a {
+    margin-left: 15px; /* Espaciado entre iconos */
+    color: #521945; /* Color de los iconos (puedes cambiarlo a lo que prefieras) */
+    font-size: 20px; /* Tamaño de los iconos, ajusta según necesites */
+}
+
+.icons a:hover {
+    color: #912F56; /* Color al pasar el cursor sobre los iconos */
+}
+.contenido-texto{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    color: #3d0848;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo semitransparente */
+}
+/* Sección de Bienvenida */
+#Título {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 15px; /* Añade separación entre el título y el texto */
+    line-height: 1.2; /* Ajusta el espacio entre líneas */
+}
+
+#Explicacion {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  max-width: 800px;
+}
+
+/* Ajustes para reducir el tamaño del texto si excede el espacio */
+.contenido-texto p {
+  font-size: calc(1.2rem + 0.5vw); /* Ajusta el tamaño de la fuente según el ancho de la ventana */
+  line-height: 1.5;
+}
+
+/* Contenedor del Botón */
+.contenedor-boton {
+    text-align: center; /* Centra el contenedor del botón */
+    margin-top: 30px; /* Espaciado superior */
+}
+
+/* Botón */
+.boton {
+    display: inline-block; /* Hace que el botón ocupe solo el ancho del contenido */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    background-color: #912F56; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    text-decoration: none; /* Elimina el subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: transform 0.2s; /* Transición suave para el efecto hover */
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.boton:hover {
+    transform: scale(1.05); /* Aumenta el tamaño del botón al pasar el cursor */
+}
+
+/* Carrusel de imágenes */
+.carousel-item img {
+    width: 700px;  /* Ancho fijo */
+    height: 700px; /* Alto fijo */
+    object-fit: contain; /* Asegura que la imagen no se recorte */
+    margin: 0 auto;
+}
+
+
+/*Bef: Parallax*/
+*, 
+*::before,
+*::after
+{
+  box-sizing: border-box;
+}
+
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+main 
+{
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+}
+
+section 
+{
+  transform-style: preserve-3d;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+}
+
+section h1
+{
+  text-align: center;
+  font-size: 4rem;
+  font-family: sans-serif;
+}
+
+.no-parallax 
+{
+  background-color: #521945;
+  z-index: 999;
+}
+
+.parallax h1 
+{
+  width: 60%;
+  font-size: 2rem;
+}
+
+.parallax::after 
+{
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: 100%;
+  z-index: -1;
+}
+
+.bg::after 
+{
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("./assets/panel.jpg");
+  background-size: cover;
+}
+.bg1::after 
+{
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("./assets/termopanel.jpg");
+  background-size: cover;
+}
+.bg2::after 
+{
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("./assets/led.jpg");
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) 
+{
+  section h1 
+  {
+    font-size: 8rem;
+  }
+  
+  .parallax h1 
+  {
+    font-size: 4rem;
+  }
+}
+
+/*Tecnologias*/
+/* Estilos generales */
+.container-scroll {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.section-scroll {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 200;
+  font-size: 2.5rem;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #912F56;
+  margin-bottom: 20px;
+}
+
+#sectionPin-scroll {
+  background-color: #521945;
+  padding: 50px 0;
+}
+
+.pin-wrap-scroll {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  color: #FFF;
+  width: calc(100vw * 5); /* Si tienes 3 imágenes, ajusta este valor dinámicamente */
+}
+
+.scroll-image {
+  width: 50vw; /* Cada imagen ocupará el 50% ancho de la ventana */
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 180px; /* Espacio entre imágenes */
+}
+
+.pin-text {
+  font-family: 'Helvetica', sans-serif;
+  width: 30%; /* Ajusta el tamaño de la caja de texto */
+  padding-right: 20px; /* Añade espacio a la derecha del texto */
+  font-size: 1.5rem; /* Ajusta el tamaño de la fuente */
+  line-height: 1.4; /* Ajusta la altura de línea para mejorar la legibilidad */
+}
