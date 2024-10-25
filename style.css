@@ -217,9 +217,11 @@ section h1
 /* Contenedor general */
 .container-scroll {
   position: relative;
-  overflow: hidden;
-  width: 100%;
+  flex-direction: column;
   min-height: 100vh;  /* Asegura que siempre ocupe al menos la altura del viewport */
+  padding-bottom: 150px; /* Añade espacio al final para el footer */
+  box-sizing: border-box; /* Asegura que el padding esté incluido en el tamaño */
+  justify-content: space-between;
 }
 
 /* Estilos de la sección */
@@ -236,6 +238,7 @@ section h1
   padding: 20px; /* Añade un poco de padding para evitar que el contenido toque los bordes */
   box-sizing: border-box;
   overflow: visible; /* Asegura que no haya corte de contenido */
+  height: auto;
 }
 
 /* Sección violeta */
@@ -263,6 +266,7 @@ section h1
 /* Estilo para las imágenes */
 .scroll-image {
   display: inline-block;
+  max-width: 100%;
   width: 50vw; /* Mantiene el tamaño original de las imágenes */
   height: 70vh; /* Ajusta la altura en función de la ventana para centrar */
   object-fit: cover;
@@ -292,6 +296,13 @@ footer {
   color: #521945; /* Color de texto blanco */
   padding: 20px;
   text-align: center;
+  width: 100%;
+  min-height: 120px; /* Asegura que tenga una altura mínima */
+  box-sizing: border-box;
+  position: relative; /* Asegura que sea parte del flujo de la página */
+  bottom: 0; /* Asegura que se quede al final */
+  z-index: 1000;
+
 }
 
 .footer-content {
