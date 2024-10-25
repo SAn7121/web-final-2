@@ -214,51 +214,108 @@ section h1
 
 /*Tecnologias*/
 /* Estilos generales */
+/* Contenedor general */
 .container-scroll {
   position: relative;
   overflow: hidden;
   width: 100%;
+  min-height: 100vh;  /* Asegura que siempre ocupe al menos la altura del viewport */
 }
 
+/* Estilos de la sección */
 .section-scroll {
   font-family: 'Helvetica', sans-serif;
   font-weight: 200;
   font-size: 2.5rem;
-  height: 80vh;
+  min-height: 100vh; /* Asegura que la sección ocupe al menos la altura del viewport */
   display: flex;
   align-items: center;
   justify-content: center;
   color: #912F56;
   margin-bottom: 20px;
+  padding: 20px; /* Añade un poco de padding para evitar que el contenido toque los bordes */
+  box-sizing: border-box;
+  overflow: visible; /* Asegura que no haya corte de contenido */
 }
 
+/* Sección violeta */
 #sectionPin-scroll {
   background-color: #521945;
   padding: 50px 0;
+  overflow-x: hidden; /* Oculta cualquier desbordamiento horizontal no deseado */
+  min-height: 100vh; /* Asegura que la sección ocupe al menos la altura del viewport */
 }
 
+/* Envoltura para el scroll */
 .pin-wrap-scroll {
-  height: 100vh;
+  height: auto; /* Permite que el contenido crezca dinámicamente */
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
   align-items: center;
   color: #FFF;
-  width: calc(100vw * 5); /* Si tienes 3 imágenes, ajusta este valor dinámicamente */
+  width: calc(100vw * 3); /* Ajusta para 3 imágenes */
+  white-space: nowrap;
+  padding: 0; /* Elimina padding */
+  box-sizing: border-box; /* Asegura que todo se respete dentro del tamaño del contenedor */
 }
 
+/* Estilo para las imágenes */
 .scroll-image {
-  width: 50vw; /* Cada imagen ocupará el 50% ancho de la ventana */
-  height: 500px;
+  display: inline-block;
+  width: 50vw; /* Mantiene el tamaño original de las imágenes */
+  height: 70vh; /* Ajusta la altura en función de la ventana para centrar */
   object-fit: cover;
   border-radius: 10px;
-  margin-right: 180px; /* Espacio entre imágenes */
+  margin-right: 180px; /* Mantiene espacio entre imágenes */
 }
 
-.pin-text {
+/* Caja de texto */
+.text-box {
   font-family: 'Helvetica', sans-serif;
-  width: 30%; /* Ajusta el tamaño de la caja de texto */
-  padding-right: 20px; /* Añade espacio a la derecha del texto */
-  font-size: 1.5rem; /* Ajusta el tamaño de la fuente */
-  line-height: 1.4; /* Ajusta la altura de línea para mejorar la legibilidad */
+  display: inline-block;
+  width: 80%; /* Ajusta el tamaño de la caja de texto */
+  padding-right: 50px; /* Añade espacio a la derecha del texto */
+  font-size: 2.5rem; /* Ajusta el tamaño de la fuente */
+  line-height: 1.8; /* Mejora la legibilidad */
+  white-space: normal; /* Permite que el texto ocupe múltiples líneas */
+  word-wrap: break-word; /* Permite que las palabras largas se rompan y no desborden el contenedor */
+  overflow-wrap: break-word; /* Lo mismo que word-wrap, para navegadores modernos */
+  max-width: 800px; /* Limita el ancho del texto a una caja de 800px */
+  height: auto; /* Permite que el texto ocupe varias líneas */
+}
+
+
+/*Pie de pagina*/
+footer {
+  background-color: #EAF2EF; /* Color de fondo oscuro */
+  color: #521945; /* Color de texto blanco */
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer a {
+  color: #521945;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+footer .social-icons {
+  margin: 20px 0;
+}
+
+footer .social-icons a {
+  margin: 0 10px;
+  color: #521945;
+}
+
+footer .payment-methods img {
+  width: 200px;
+  margin: 1 10px;
+  vertical-align: middle;
 }
