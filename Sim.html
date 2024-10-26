@@ -27,10 +27,35 @@
                 </ul>
             </nav>
     
-            <!-- Iconos de Carrito y Búsqueda -->
-            <div class="icons">
-                <a href="Carrito"><i class="fas fa-shopping-cart"></i></a>
-                <a href="Buscar"><i class="fas fa-search"></i></a>
+              <!-- Iconos de Carrito y Búsqueda -->
+              <div class="icons">
+                <div class="cart-container">
+                    <button id="cart-icon" class="cart-button">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <!-- Menú desplegable del carrito -->
+                    <div id="cart-dropdown" class="cart-dropdown">
+                        <h3>Tu Carrito</h3>
+                        <ul id="cart-items">
+                            <!-- Ejemplo de producto -->
+                            <li class="cart-item">
+                                <span class="product-name">Curso de Eficiencia Energetica</span>
+                                <button class="add-to-cart" data-price="40000">+</button>
+                            </li>
+                            <li class="cart-item">
+                                <span class="product-name">Curso de Instalacion Paneles Solares</span>
+                                <button class="add-to-cart" data-price="80000">+</button>
+                            </li>
+                            <li class="cart-item">
+                                <span class="product-name">Curso ProAdventage</span>
+                                <button class="add-to-cart" data-price="85000">+</button>
+                            </li>
+                        </ul>
+                        <p>Total: $<span id="total-amount">0.00</span></p>
+                    </div>
+                </div>
+            
+                <a href="Buscar.html"><i class="fas fa-search"></i></a>
             </div>
         </header>
     </body>
