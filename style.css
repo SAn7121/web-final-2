@@ -4,11 +4,12 @@
     box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho y alto total */
 }
 
+
 /* Encabezado */
 header {
     position: sticky; /* Fija el encabezado en la parte superior */
     top: 0; /* Coloca el encabezado en la parte superior */
-    background-color: #EAF2EF; /* Color de fondo del encabezado */
+    background-color: #1B2432; /* Color de fondo del encabezado */
     padding: 15px; /* Espaciado interno */
     display: flex; /* Uso de flexbox para alinear elementos */
     justify-content: space-around; /* Espacia los elementos del encabezado */
@@ -35,7 +36,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: #521945; /* Color de los enlaces */
+    color: #846267; /* Color de los enlaces */
     padding: 10px; /* Añade espaciado interno a los enlaces */
 }
 
@@ -45,12 +46,12 @@ nav ul li a {
 }
 .icons a {
     margin-left: 15px; /* Espaciado entre iconos */
-    color: #521945; /* Color de los iconos (puedes cambiarlo a lo que prefieras) */
+    color: #846267; /* Color de los iconos (puedes cambiarlo a lo que prefieras) */
     font-size: 20px; /* Tamaño de los iconos, ajusta según necesites */
 }
 
 .icons a:hover {
-    color: #912F56; /* Color al pasar el cursor sobre los iconos */
+    color: #EAE1D9; /* Color al pasar el cursor sobre los iconos */
 }
 .contenido-texto{
     position: absolute;
@@ -63,9 +64,9 @@ nav ul li a {
     align-items: center;
     text-align: center;
     z-index: 1;
-    color: #3d0848;
+    color: #212321;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.5); /* Fondo semitransparente */
+    background-color: rgba(256, 256, 256, 0.8); /* Fondo semitransparente */
 }
 /* Sección de Bienvenida */
 #Título {
@@ -97,8 +98,8 @@ nav ul li a {
 .boton {
     display: inline-block; /* Hace que el botón ocupe solo el ancho del contenido */
     padding: 10px 20px; /* Espaciado interno del botón */
-    background-color: #912F56; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
+    background-color: #A8C8E6; /* Color de fondo del botón */
+    color: #212321; /* Color del texto del botón */
     text-decoration: none; /* Elimina el subrayado */
     border-radius: 5px; /* Bordes redondeados */
     transition: transform 0.2s; /* Transición suave para el efecto hover */
@@ -148,7 +149,7 @@ section
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFF;
+  color: #846267;
 }
 
 section h1
@@ -160,7 +161,7 @@ section h1
 
 .no-parallax 
 {
-  background-color: #521945;
+  background-color: #EAE1D9;
   z-index: 999;
 }
 
@@ -213,6 +214,7 @@ section h1
 }
 
 /*Tecnologias*/
+
 /* Estilos generales */
 /* Contenedor general */
 .container-scroll {
@@ -233,7 +235,7 @@ section h1
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #912F56;
+  color: #846267;
   margin-bottom: 20px;
   padding: 20px; /* Añade un poco de padding para evitar que el contenido toque los bordes */
   box-sizing: border-box;
@@ -243,7 +245,7 @@ section h1
 
 /* Sección violeta */
 #sectionPin-scroll {
-  background-color: #521945;
+  background-color: #EAE1D9;
   padding: 50px 0;
   overflow-x: hidden; /* Oculta cualquier desbordamiento horizontal no deseado */
   min-height: 100vh; /* Asegura que la sección ocupe al menos la altura del viewport */
@@ -256,7 +258,7 @@ section h1
   justify-content: flex-start;
   flex-direction: row;
   align-items: center;
-  color: #FFF;
+  color: #212321;
   width: calc(100vw * 3); /* Ajusta para 3 imágenes */
   white-space: nowrap;
   padding: 0; /* Elimina padding */
@@ -292,8 +294,8 @@ section h1
 
 /*Pie de pagina*/
 footer {
-  background-color: #EAF2EF; /* Color de fondo oscuro */
-  color: #521945; /* Color de texto blanco */
+  background-color: #1B2432; /* Color de fondo */
+  color: #846267; /* Color de texto*/
   padding: 20px;
   text-align: center;
   width: 100%;
@@ -301,7 +303,6 @@ footer {
   box-sizing: border-box;
   position: relative; /* Asegura que sea parte del flujo de la página */
   bottom: 0; /* Asegura que se quede al final */
-  z-index: 1000;
 
 }
 
@@ -311,7 +312,7 @@ footer {
 }
 
 footer a {
-  color: #521945;
+  color: #EAE1D9;
   text-decoration: none;
   margin: 0 15px;
 }
@@ -322,7 +323,7 @@ footer .social-icons {
 
 footer .social-icons a {
   margin: 0 10px;
-  color: #521945;
+  color: #846267;
 }
 
 footer .payment-methods img {
