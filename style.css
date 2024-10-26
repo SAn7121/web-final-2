@@ -331,3 +331,52 @@ footer .payment-methods img {
   margin: 1 10px;
   vertical-align: middle;
 }
+
+
+/*Carrito*/
+/* Estilo del menú desplegable del carrito */
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #EAE1D9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 200px;
+  z-index: 1;
+}
+
+.cart-dropdown h3 {
+  margin-top: 0;
+  color: #846267;
+  font-size: 1.2rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.cart-item .product-name {
+  cursor: pointer;
+  color: #1B2432;
+  text-decoration: underline;
+}
+
+.cart-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mostrar el menú desplegable cuando esté activo */
+.cart-container.active .cart-dropdown {
+  display: block;
+}
