@@ -50,34 +50,69 @@
             </ul>
         </nav>
 
-          <!-- Iconos de Carrito y Búsqueda -->
-          <div class="icons">
+         <!-- Iconos de Carrito y Búsqueda -->
+         <div class="icons">
             <div class="cart-container">
-                <button id="cart-icon" class="cart-button">
+                <button id="cart-icon" class="btn btn-outline-secondary rounded-circle">
                     <i class="fas fa-shopping-cart"></i>
                 </button>
                 <!-- Menú desplegable del carrito -->
-                <div id="cart-dropdown" class="cart-dropdown">
-                    <h3>Tu Carrito</h3>
-                    <ul id="cart-items">
+                <div id="cart-dropdown" class="cart-dropdown rounded p-3">
+                    <h3 class="text-center">Tu Carrito</h3>
+                    <ul id="cart-items" class="list-unstyled">
                         <!-- Ejemplo de producto -->
-                        <li class="cart-item">
-                            <span class="product-name">Curso de Eficiencia Energetica</span>
-                            <button class="add-to-cart" data-price="40000">+</button>
+                        <li class="cart-item d-flex align-items-center mb-3">
+                            <img src="https://via.placeholder.com/50" alt="Curso de Eficiencia Energetica"
+                                class="me-3 img-thumbnail">
+                            <div>
+                                <span class="product-name text-primary fw-bold" style="cursor: pointer;">Curso de
+                                    Eficiencia Energetica</span>
+                                <p class="mb-0">$40,000</p>
+                                <div class="input-group mt-1">
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <span class="quantity">0</span>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="40000">+</button>
+                                    <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
+                                </div>
+                            </div>
                         </li>
-                        <li class="cart-item">
-                            <span class="product-name">Curso de Instalacion Paneles Solares</span>
-                            <button class="add-to-cart" data-price="80000">+</button>
+                        <li class="cart-item d-flex align-items-center mb-3">
+                            <img src="https://via.placeholder.com/50" alt="Curso de
+                            Instalacion Paneles Solares"
+                                class="me-3 img-thumbnail">
+                            <div>
+                                <span class="product-name text-primary fw-bold" style="cursor: pointer;">Curso de
+                                    Instalacion Paneles Solares</span>
+                                <p class="mb-0">$80,000</p>
+                                <div class="input-group mt-1">
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <span class="quantity">0</span>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="80000">+</button>
+                                    <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
+                                </div>
+                            </div>
                         </li>
-                        <li class="cart-item">
-                            <span class="product-name">Curso ProAdventage</span>
-                            <button class="add-to-cart" data-price="85000">+</button>
+                        <li class="cart-item d-flex align-items-center mb-3">
+                            <img src="https://via.placeholder.com/50" alt="Curso
+                            ProAdventage"
+                                class="me-3 img-thumbnail">
+                            <div>
+                                <span class="product-name text-primary fw-bold" style="cursor: pointer;">Curso
+                                    ProAdventage</span>
+                                <p class="mb-0">$85,000</p>
+                                <div class="input-group mt-1">
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <span class="quantity">0</span>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="85000">+</button>
+                                    <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
+                                </div>
+                            </div>
                         </li>
                     </ul>
-                    <p>Total: $<span id="total-amount">0.00</span></p>
+                    <p class="text-center mt-3 fw-bold">Total: $<span id="total-amount">0.00</span></p>
                 </div>
             </div>
-        
+
             <a href="Buscar.html"><i class="fas fa-search"></i></a>
         </div>
     </header>
@@ -142,10 +177,10 @@
                 </div>
             </div>
         </footer>
-    
+
     </div>
 
-    
+
 
 </body>
 

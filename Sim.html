@@ -1,64 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EcoSim: Simulador de Energía Sostenible</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="cart-dropdown.js"></script>
-    </head>
-    <body>
-         <!-- Encabezado Principal -->
-         <header>
-            <div class="logo">
-                <a href="index.html">
-                     <img src="ECOSIMsinfondo.png" alt="EcoSim Logo">
-                </a>
-            </div>
-            
-            <!-- Menú de Navegación -->
-            <nav>
-                <ul>
-                    <li><a href="Sim.html">Simulador</a></li>
-                    <li><a href="TEC.html">Tecnologias</a></li>
-                    <li><a href="Bef.html">Beneficios</a></li>
-                </ul>
-            </nav>
-    
-              <!-- Iconos de Carrito y Búsqueda -->
-              <div class="icons">
-                <div class="cart-container">
-                    <button id="cart-icon" class="cart-button">
-                        <i class="fas fa-shopping-cart"></i>
-                    </button>
-                    <!-- Menú desplegable del carrito -->
-                    <div id="cart-dropdown" class="cart-dropdown">
-                        <h3>Tu Carrito</h3>
-                        <ul id="cart-items">
-                            <!-- Ejemplo de producto -->
-                            <li class="cart-item">
-                                <span class="product-name">Curso de Eficiencia Energetica</span>
-                                <button class="add-to-cart" data-price="40000">+</button>
-                            </li>
-                            <li class="cart-item">
-                                <span class="product-name">Curso de Instalacion Paneles Solares</span>
-                                <button class="add-to-cart" data-price="80000">+</button>
-                            </li>
-                            <li class="cart-item">
-                                <span class="product-name">Curso ProAdventage</span>
-                                <button class="add-to-cart" data-price="85000">+</button>
-                            </li>
-                        </ul>
-                        <p>Total: $<span id="total-amount">0.00</span></p>
-                    </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSim: Simulador de Energía Sostenible</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="cart-dropdown.js"></script>
+</head>
+
+<body>
+    <!-- Encabezado Principal -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="ECOSIMsinfondo.png" alt="EcoSim Logo">
+            </a>
+        </div>
+
+        <!-- Menú de Navegación -->
+        <nav>
+            <ul>
+                <li><a href="Sim.html">Simulador</a></li>
+                <li><a href="TEC.html">Tecnologias</a></li>
+                <li><a href="Bef.html">Beneficios</a></li>
+            </ul>
+        </nav>
+
+         <!-- Iconos de Carrito y Búsqueda -->
+         <div class="icons">
+            <div class="cart-container">
+                <button id="cart-icon" class="btn btn-outline-secondary rounded-circle">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <!-- Menú desplegable del carrito -->
+                <div id="cart-dropdown" class="cart-dropdown rounded p-3">
+                    <h3 class="text-center">Tu Carrito</h3>
+                    <ul id="cart-items" class="list-unstyled">
+                        <!-- Ejemplo de producto -->
+                        <li class="cart-item d-flex align-items-center mb-3">
+                            <img src="https://via.placeholder.com/50" alt="Curso de Eficiencia Energetica"
+                                class="me-3 img-thumbnail">
+                            <div>
+                                <span class="product-name text-primary fw-bold" style="cursor: pointer;">Curso de
+                                    Eficiencia Energetica</span>
+                                <p class="mb-0">$40,000</p>
+                                <div class="input-group mt-1">
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <span class="quantity">0</span>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="40000">+</button>
+                                    <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cart-item d-flex align-items-center mb-3">
+                            <img src="https://via.placeholder.com/50" alt="Curso de
+                            Instalacion Paneles Solares"
+                                class="me-3 img-thumbnail">
+                            <div>
+                                <span class="product-name text-primary fw-bold" style="cursor: pointer;">Curso de
+                                    Instalacion Paneles Solares</span>
+                                <p class="mb-0">$80,000</p>
+                                <div class="input-group mt-1">
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <span class="quantity">0</span>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="80000">+</button>
+                                    <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cart-item d-flex align-items-center mb-3">
+                            <img src="https://via.placeholder.com/50" alt="Curso
+                            ProAdventage"
+                                class="me-3 img-thumbnail">
+                            <div>
+                                <span class="product-name text-primary fw-bold" style="cursor: pointer;">Curso
+                                    ProAdventage</span>
+                                <p class="mb-0">$85,000</p>
+                                <div class="input-group mt-1">
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <span class="quantity">0</span>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="85000">+</button>
+                                    <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="text-center mt-3 fw-bold">Total: $<span id="total-amount">0.00</span></p>
                 </div>
-            
-                <a href="Buscar.html"><i class="fas fa-search"></i></a>
             </div>
-        </header>
-    </body>
+
+            <a href="Buscar.html"><i class="fas fa-search"></i></a>
+        </div>
+    </header>
+</body>
+
 </html>
