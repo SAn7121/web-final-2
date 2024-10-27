@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Buscar palabra clave y redirigir
-    searchInput.addEventListener('keydown', (e) => {
+    searchInput.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
             const searchTerm = searchInput.value.toLowerCase();
             const page = searchKeywords[searchTerm];
@@ -37,7 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             else {
                 Swal.fire({
-                    title: 'No se encontraron resultados para tu búsqueda.'});
+                    title: 'No se encontraron resultados para tu búsqueda.',
+                    confirmButtonText: "Cerrar"
+                });
             }
         }
         
