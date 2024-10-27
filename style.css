@@ -343,13 +343,16 @@ footer .payment-methods img {
 .cart-dropdown {
   display: none;
   position: absolute;
-  top: 40px;
+  top: 50px;
   right: 0;
   background-color: #EAE1D9;
+  border-radius: 10px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  width: 200px;
-  z-index: 1;
+  width: 300px; /* Aumentar el ancho */
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
 }
 
 .cart-dropdown h3 {
@@ -358,25 +361,66 @@ footer .payment-methods img {
   font-size: 1.2rem;
 }
 
+
 .cart-item {
   display: flex;
-  justify-content: space-between;
-  padding: 5px 0;
+  align-items: center;
 }
 
-.cart-item .product-name {
+#cart-icon {
+  color: #846267; /* Color base */
+  font-size: 20px;
   cursor: pointer;
+}
+
+#cart-icon:hover {
+  color: #EAE1D9; /* Color al pasar el cursor */
+}
+
+.product-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-name {
+  font-size: 1rem;
   color: #1B2432;
   text-decoration: underline;
-}
-
-.cart-button {
-  background: none;
-  border: none;
   cursor: pointer;
 }
 
-/* Mostrar el menú desplegable cuando esté activo */
-.cart-container.active .cart-dropdown {
-  display: block;
+.product-price {
+  font-size: 0.9rem;
+  color: #846267;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.product-quantity {
+  margin: 0 10px;
+}
+
+.remove-item {
+  font-size: 0.8rem;
+  color: #846267;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.img-thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
 }
