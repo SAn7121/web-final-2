@@ -53,51 +53,62 @@
                                     Eficiencia Energetica</span>
                                 <p class="mb-0">$40,000</p>
                                 <div class="input-group mt-1">
-                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm"
+                                        disabled>-</button>
                                     <span class="quantity">0</span>
-                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="40000">+</button>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm"
+                                        data-price="40000">+</button>
                                     <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
                                 </div>
                             </div>
                         </li>
                         <li class="cart-item d-flex align-items-center mb-3">
                             <img src="https://via.placeholder.com/50" alt="Curso de
-                            Instalacion Paneles Solares"
-                                class="me-3 img-thumbnail">
+                            Instalacion Paneles Solares" class="me-3 img-thumbnail">
                             <div>
                                 <span class="product-name text-primary fw-bold" style="cursor: pointer;">Curso de
                                     Instalacion Paneles Solares</span>
                                 <p class="mb-0">$80,000</p>
                                 <div class="input-group mt-1">
-                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm"
+                                        disabled>-</button>
                                     <span class="quantity">0</span>
-                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="80000">+</button>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm"
+                                        data-price="80000">+</button>
                                     <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
                                 </div>
                             </div>
                         </li>
                         <li class="cart-item d-flex align-items-center mb-3">
                             <img src="https://via.placeholder.com/50" alt="Curso
-                            ProAdventage"
-                                class="me-3 img-thumbnail">
+                            ProAdventage" class="me-3 img-thumbnail">
                             <div>
                                 <span class="product-name text-primary fw-bold" style="cursor: pointer;">Curso
                                     ProAdventage</span>
                                 <p class="mb-0">$85,000</p>
                                 <div class="input-group mt-1">
-                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm"
+                                        disabled>-</button>
                                     <span class="quantity">0</span>
-                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="85000">+</button>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm"
+                                        data-price="85000">+</button>
                                     <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
                                 </div>
                             </div>
                         </li>
                     </ul>
                     <p class="text-center mt-3 fw-bold">Total: $<span id="total-amount">0.00</span></p>
+                    <button id="checkout-button" class="btn btn-primary w-100 mt-3">Pagar</button>
                 </div>
             </div>
 
-            <a href="Buscar.html"><i class="fas fa-search"></i></a>
+            <!-- Icono de Búsqueda -->
+            <button id="search-icon" class="btn btn-outline-secondary rounded-circle ms-2">
+                <i class="fas fa-search"></i>
+            </button>
+            <div id="search-dropdown" class="search-dropdown rounded p-3" style="display: none;">
+                <input type="text" id="search-input" class="form-control" placeholder="Buscar...">
+            </div>
         </div>
     </header>
 

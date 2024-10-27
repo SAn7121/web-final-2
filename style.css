@@ -340,6 +340,16 @@ footer .payment-methods img {
   display: inline-block;
 }
 
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+  margin: 0 10px; /* Aumenta el espacio entre los botones + y - */
+  font-size: 1rem;
+}
+
 .cart-dropdown {
   display: none;
   position: absolute;
@@ -349,7 +359,7 @@ footer .payment-methods img {
   border-radius: 10px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  width: 300px; /* Aumentar el ancho */
+  width: 320px; /* Aumentar el ancho */
   max-height: 400px;
   overflow-y: auto;
   z-index: 1000;
@@ -423,4 +433,23 @@ footer .payment-methods img {
   width: 50px;
   height: 50px;
   object-fit: cover;
+}
+
+/*Buscador*/
+#search-icon {
+  color: #846267;
+  font-size: 20px;
+}
+
+#search-icon:hover {
+  color: #EAE1D9;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 170px; /* Ajusta según sea necesario */
+  right: 10px;
+  width: 200px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }

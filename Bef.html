@@ -35,7 +35,7 @@
         </nav>
 
          <!-- Iconos de Carrito y Búsqueda -->
-         <div class="icons">
+        <div class="icons">
             <div class="cart-container">
                 <button id="cart-icon" class="btn btn-outline-secondary rounded-circle">
                     <i class="fas fa-shopping-cart"></i>
@@ -94,10 +94,17 @@
                         </li>
                     </ul>
                     <p class="text-center mt-3 fw-bold">Total: $<span id="total-amount">0.00</span></p>
+                    <button id="checkout-button" class="btn btn-primary w-100 mt-3">Pagar</button>
                 </div>
             </div>
 
-            <a href="Buscar.html"><i class="fas fa-search"></i></a>
+            <!-- Icono de Búsqueda -->
+            <button id="search-icon" class="btn btn-outline-secondary rounded-circle ms-2">
+                <i class="fas fa-search"></i>
+            </button>
+            <div id="search-dropdown" class="search-dropdown rounded p-3" style="display: none;">
+                <input type="text" id="search-input" class="form-control" placeholder="Buscar...">
+            </div>
         </div>
     </header>
 
