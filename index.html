@@ -14,6 +14,8 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="cart-dropdown.js"></script>
+
+   
 </head>
 
 <body>
@@ -26,13 +28,33 @@
         </div>
 
         <!-- Menú de Navegación -->
-        <nav>
+        <nav class="desktop-nav">
             <ul class="icons">
                 <li><a href="Sim.html">Simulador</a></li>
                 <li><a href="TEC.html">Tecnologias</a></li>
                 <li><a href="Bef.html">Beneficios</a></li>
             </ul>
         </nav>
+
+        <!-- Icono de menú para dispositivos móviles -->
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Menú de Navegación Móvil (Oculto inicialmente) -->
+        <nav id="mobile-nav" class="mobile-nav">
+            <ul class="icons">
+                <li><a href="Sim.html">Simulador</a></li>
+                <li><a href="TEC.html">Tecnologías</a></li>
+                <li><a href="Bef.html">Beneficios</a></li>
+            </ul>
+        </nav>
+
+        <script>
+            document.getElementById("mobile-menu-toggle").addEventListener("click", function () {
+                document.getElementById("mobile-nav").classList.toggle("active");
+            });
+        </script>
 
         <!-- Iconos de Carrito y Búsqueda -->
         <div class="icons">

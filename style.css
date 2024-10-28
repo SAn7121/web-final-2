@@ -453,3 +453,110 @@ footer .payment-methods img {
   background-color: #fff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
+/*Menu desplegable celu*/
+/* Ajustes para el menú de navegación móvil */
+.mobile-menu-toggle {
+  display: none; /* Oculto en pantallas de escritorio */
+  font-size: 1.5rem;
+  color: #846267;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  top: 70px;
+  right: 15px;
+  background-color: #1B2432;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-nav.active {
+  display: block;
+  opacity: 1;
+}
+
+.mobile-nav ul li a {
+  color: #846267;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.mobile-nav ul li a:hover {
+  color: #EAE1D9;
+}
+
+@media (max-width: 768px) {
+  /* Ocultar el menú de navegación de escritorio y mostrar el de móvil */
+  .desktop-nav {
+      display: none;
+  }
+
+  .mobile-menu-toggle {
+      display: block; /* Mostrar ícono de menú móvil */
+  }
+
+  /* Mostrar el menú de navegación móvil cuando esté activo */
+  .mobile-nav.active {
+      display: block;
+  }
+
+  /* Ajustar el tamaño de los elementos en pantallas pequeñas */
+  header {
+      padding: 10px;
+      flex-direction: column;
+  }
+
+  .logo img {
+      width: 180px;
+  }
+
+  .contenido-texto #Título {
+      font-size: 1.8rem;
+  }
+
+  .contenido-texto #Explicacion {
+      font-size: 1rem;
+  }
+
+  /* Ajustes para el carrusel en pantallas móviles */
+  .carousel-item img {
+      width: 100%;
+      height: auto;
+  }
+
+  /* Ajustar el botón principal */
+  .contenedor-boton {
+      margin-top: 20px;
+  }
+
+  .boton {
+      padding: 8px 16px;
+  }
+
+  /* Ajustes para el footer en pantallas pequeñas */
+  footer {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .social-icons {
+      margin-top: 10px;
+  }
+}
