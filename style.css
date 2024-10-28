@@ -117,7 +117,82 @@ nav ul li a {
     object-fit: contain; /* Asegura que la imagen no se recorte */
     margin: 0 auto;
 }
+/* Ajuste del carrusel para pantallas pequeñas */
+.carousel-inner img {
+  height: auto;
+  max-height: 60vh; /* Limita la altura de la imagen en móvil */
+  object-fit: cover;
+}
 
+.contenido-texto {
+  padding: 10px;
+  text-align: center;
+}
+
+#Título {
+  font-size: 1.5rem; /* Tamaño del título en móvil */
+}
+
+#Explicacion {
+  font-size: 1rem; /* Tamaño del texto de explicación en móvil */
+}
+
+/* Ajuste del botón */
+.contenedor-boton .boton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Ajuste del footer */
+footer {
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer .social-icons a {
+  margin: 0 5px;
+  font-size: 1.2rem;
+}
+
+footer .payment-methods img {
+  max-width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-inner img {
+      height: auto;
+      max-height: 50vh; /* Reducir aún más la altura en pantallas pequeñas */
+  }
+
+  .contenido-texto {
+      padding: 5px;
+  }
+
+  #Título {
+      font-size: 1.3rem;
+  }
+
+  #Explicacion {
+      font-size: 0.9rem;
+  }
+
+  .contenedor-boton .boton {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+  }
+
+  footer .social-icons a {
+      font-size: 1rem;
+  }
+
+  footer .payment-methods img {
+      max-width: 80px;
+  }
+}
 
 /*Bef: Parallax*/
 *, 
@@ -296,7 +371,7 @@ section h1
 footer {
   background-color: #1B2432; /* Color de fondo */
   color: #846267; /* Color de texto*/
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
   width: 100%;
   min-height: 120px; /* Asegura que tenga una altura mínima */
@@ -307,8 +382,9 @@ footer {
 }
 
 .footer-content {
-  max-width: 1200px;
+  max-width: 1200px; /* Para limitar el contenido dentro de un ancho máximo */
   margin: 0 auto;
+  padding: 10px;
 }
 
 footer a {
@@ -324,11 +400,17 @@ footer .social-icons {
 footer .social-icons a {
   margin: 0 10px;
   color: #846267;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color:  #EAE1D9;
 }
 
 footer .payment-methods img {
-  width: 200px;
-  margin: 1 10px;
+  max-width: 120px;
+  margin-top: 15px;
   vertical-align: middle;
 }
 
@@ -459,12 +541,23 @@ footer .payment-methods img {
 /* Ajustes para el menú de navegación móvil */
 .mobile-menu-toggle {
   display: none; /* Oculto en pantallas de escritorio */
-  font-size: 1.5rem;
-  color: #846267;
-  background: none;
-  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2A2A2A; /* Color de fondo */
+  color: #846267; /* Color del ícono */
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #EAE1D9;
+  margin: 5px;
   cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
+.icon-circle:hover {
+  color: #EAE1D9; /* Color al pasar el cursor */
+  background-color: #846267;
+}
+
 
 .mobile-nav {
   display: none; /* Oculto por defecto */
