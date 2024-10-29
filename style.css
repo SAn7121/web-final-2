@@ -72,7 +72,7 @@ nav ul li a {
 #Título {
     font-size: 2.2rem;
     font-weight: bold;
-    margin-bottom: 15px; /* Añade separación entre el título y el texto */
+    margin-bottom: 10px; /* Añade separación entre el título y el texto */
     line-height: 1.2; /* Ajusta el espacio entre líneas */
 }
 
@@ -84,8 +84,8 @@ nav ul li a {
 
 /* Ajustes para reducir el tamaño del texto si excede el espacio */
 .contenido-texto p {
-  font-size: calc(1.2rem + 0.5vw); /* Ajusta el tamaño de la fuente según el ancho de la ventana */
-  line-height: 1.5;
+  font-size: calc(1.5rem + 0.5vw); /* Ajusta el tamaño de la fuente según el ancho de la ventana */
+  line-height: 2.0;
 }
 
 /* Contenedor del Botón */
@@ -128,10 +128,6 @@ nav ul li a {
   object-fit: cover;
 }
 
-.contenido-texto {
-  padding: 10px;
-  text-align: center;
-}
 
 #Título {
   font-size: 1.5rem; /* Tamaño del título en móvil */
@@ -178,7 +174,7 @@ footer .payment-methods img {
   }
 
   .contenido-texto {
-      margin-top: 5px;
+      margin-top: calc(50px + 1rem); /* Ajusta el valor según la altura del header */
       padding: 5px;
   }
 
@@ -304,6 +300,12 @@ section h1
 /* Contenedor general */
 .container {
   overflow-y: auto;
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* Ajusta el tamaño máximo según tus necesidades */
+  margin: auto;
+
+  
 }
 .container-scroll {
   position: relative;
