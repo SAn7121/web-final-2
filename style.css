@@ -1,58 +1,85 @@
 /* Hecho: colores, box model, display, medidas, position, fuentes */
 /* Selector universal */
 * {
-    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho y alto total */
+  box-sizing: border-box;
+  /* Asegura que el padding y el border se incluyan en el ancho y alto total */
 }
 
 
 /* Encabezado */
 header {
-    position: sticky; /* Fija el encabezado en la parte superior */
-    top: 0; /* Coloca el encabezado en la parte superior */
-    background-color: #1B2432; /* Color de fondo del encabezado */
-    padding: 15px; /* Espaciado interno */
-    display: flex; /* Uso de flexbox para alinear elementos */
-    justify-content: space-around; /* Espacia los elementos del encabezado */
-    align-items: center; /* Alinea verticalmente los elementos */
-    z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+  position: sticky;
+  /* Fija el encabezado en la parte superior */
+  top: 0;
+  /* Coloca el encabezado en la parte superior */
+  background-color: #1B2432;
+  /* Color de fondo del encabezado */
+  padding: 15px;
+  /* Espaciado interno */
+  display: flex;
+  /* Uso de flexbox para alinear elementos */
+  justify-content: space-around;
+  /* Espacia los elementos del encabezado */
+  align-items: center;
+  /* Alinea verticalmente los elementos */
+  z-index: 1000;
+  /* Asegura que el encabezado esté por encima de otros elementos */
 }
 
 
 /* Logo */
 .logo img {
-    width: 250px; /* Ajusta el tamaño según lo necesites */
-    height: auto; /* Mantiene la proporción de la imagen */
-    vertical-align: middle; /* Alinea la imagen verticalmente */
+  width: 250px;
+  /* Ajusta el tamaño según lo necesites */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  vertical-align: middle;
+  /* Alinea la imagen verticalmente */
 }
 
 /* Navegación */
 nav ul {
-    list-style-type: none; /* Elimina el estilo de lista */
-    margin: 0; /* Elimina el margen */
-    padding: 0; /* Elimina el padding */
-    display:flex; /* Usa flexbox para el menú */
-    gap: 20px; /* Espacio entre los elementos */
+  list-style-type: none;
+  /* Elimina el estilo de lista */
+  margin: 0;
+  /* Elimina el margen */
+  padding: 0;
+  /* Elimina el padding */
+  display: flex;
+  /* Usa flexbox para el menú */
+  gap: 20px;
+  /* Espacio entre los elementos */
 }
 
 nav ul li a {
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: #846267; /* Color de los enlaces */
-    padding: 10px; /* Añade espaciado interno a los enlaces */
+  text-decoration: none;
+  /* Elimina el subrayado de los enlaces */
+  color: #846267;
+  /* Color de los enlaces */
+  padding: 10px;
+  /* Añade espaciado interno a los enlaces */
 }
 
 /* Iconos */
 .icons a {
-    margin-left: 15px; /* Espaciado entre iconos */
+  margin-left: 15px;
+  /* Espaciado entre iconos */
 }
+
 .icons a {
-    margin-left: 15px; /* Espaciado entre iconos */
-    color: #846267; /* Color de los iconos (puedes cambiarlo a lo que prefieras) */
-    font-size: 20px; /* Tamaño de los iconos, ajusta según necesites */
+  margin-left: 15px;
+  /* Espaciado entre iconos */
+  color: #846267;
+  /* Color de los iconos (puedes cambiarlo a lo que prefieras) */
+  font-size: 20px;
+  /* Tamaño de los iconos, ajusta según necesites */
 }
 
 .icons a:hover {
-    color: #EAE1D9; /* Color al pasar el cursor sobre los iconos */
+  color: #EAE1D9;
+  /* Color al pasar el cursor sobre los iconos */
 }
+
 .contenido-texto {
   position: absolute;
   inset: 0;
@@ -67,14 +94,18 @@ nav ul li a {
   color: #212321;
   padding: 20px;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente con más opacidad */
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Fondo semitransparente con más opacidad */
 }
+
 /* Sección de Bienvenida */
 #Título {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin-bottom: 10px; /* Añade separación entre el título y el texto */
-    line-height: 1.2; /* Ajusta el espacio entre líneas */
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  /* Añade separación entre el título y el texto */
+  line-height: 1.2;
+  /* Ajusta el espacio entre líneas */
 }
 
 #Explicacion {
@@ -86,57 +117,77 @@ nav ul li a {
 
 /* Ajustes para reducir el tamaño del texto si excede el espacio */
 .contenido-texto p {
-  font-size: calc(0.1vw + 0.1vh + 0.9rem); /* Tamaño responsivo */
+  font-size: calc(0.1vw + 0.1vh + 0.9rem);
+  /* Tamaño responsivo */
 }
 
 /* Contenedor del Botón */
 .contenedor-boton {
-    text-align: center; /* Centra el contenedor del botón */
-    margin-top: 30px; /* Espaciado superior */
+  text-align: center;
+  /* Centra el contenedor del botón */
+  margin-top: 30px;
+  /* Espaciado superior */
 }
 
 /* Botón */
 .boton {
-    display: inline-block; /* Hace que el botón ocupe solo el ancho del contenido */
-    padding: 10px 20px; /* Espaciado interno del botón */
-    background-color: #A8C8E6; /* Color de fondo del botón */
-    color: #212321; /* Color del texto del botón */
-    text-decoration: none; /* Elimina el subrayado */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: transform 0.2s; /* Transición suave para el efecto hover */
+  display: inline-block;
+  /* Hace que el botón ocupe solo el ancho del contenido */
+  padding: 10px 20px;
+  /* Espaciado interno del botón */
+  background-color: #A8C8E6;
+  /* Color de fondo del botón */
+  color: #212321;
+  /* Color del texto del botón */
+  text-decoration: none;
+  /* Elimina el subrayado */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  transition: transform 0.2s;
+  /* Transición suave para el efecto hover */
 }
 
 /* Efecto al pasar el cursor sobre el botón */
 .boton:hover {
-    transform: scale(1.05); /* Aumenta el tamaño del botón al pasar el cursor */
+  transform: scale(1.05);
+  /* Aumenta el tamaño del botón al pasar el cursor */
 }
 
 /* Carrusel de imágenes */
 .carousel-item img {
-    width: 100%;  /* Ancho fijo */
-    height: auto; /* Alto fijo */
-    object-fit: cover; /* Asegura que la imagen no se recorte */
-    position: relative;
-    display:block;
+  width: 100%;
+  /* Ancho fijo */
+  height: auto;
+  /* Alto fijo */
+  object-fit: cover;
+  /* Asegura que la imagen no se recorte */
+  position: relative;
+  display: block;
 }
+
 /* Ajuste del carrusel para pantallas pequeñas */
-.carousel-inner{
-  max-height: 80vh; /* Limita la altura del carrusel para que no ocupe toda la pantalla */
+.carousel-inner {
+  max-height: 80vh;
+  /* Limita la altura del carrusel para que no ocupe toda la pantalla */
   overflow: hidden;
 }
+
 .carousel-inner img {
   height: auto;
-  max-height: 80vh; /* Limita la altura de la imagen en móvil */
+  max-height: 80vh;
+  /* Limita la altura de la imagen en móvil */
   object-fit: cover;
 }
 
 
 #Título {
-  font-size: 1.5rem; /* Tamaño del título en móvil */
+  font-size: 1.5rem;
+  /* Tamaño del título en móvil */
 }
 
 #Explicacion {
-  font-size: 1rem; /* Tamaño del texto de explicación en móvil */
+  font-size: 1rem;
+  /* Tamaño del texto de explicación en móvil */
 }
 
 /* Ajuste del botón */
@@ -170,62 +221,62 @@ footer .payment-methods img {
     padding: 10px;
     text-align: center;
   }
+
   .carousel-inner img {
-    height: auto; /* Ajuste para que no bloquee contenido en móviles */
-    max-height: 50vh; /* Asegura que no ocupe demasiado espacio en vertical */
+    height: auto;
+    /* Ajuste para que no bloquee contenido en móviles */
+    max-height: 50vh;
+    /* Asegura que no ocupe demasiado espacio en vertical */
   }
 
   .contenido-texto {
-      margin-top: calc(50px + 1rem); /* Ajusta el valor según la altura del header */
-      padding: 5px;
+    margin-top: calc(50px + 1rem);
+    /* Ajusta el valor según la altura del header */
+    padding: 5px;
   }
 
   #Título {
-      font-size: 1.3rem;
+    font-size: 1.3rem;
   }
 
   #Explicacion {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 
   .contenedor-boton .boton {
-      font-size: 0.9rem;
-      padding: 8px 15px;
+    font-size: 0.9rem;
+    padding: 8px 15px;
   }
 
   footer .social-icons a {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   footer .payment-methods img {
-      max-width: 80px;
+    max-width: 80px;
   }
 }
 
 /*Bef: Parallax*/
-*, 
+*,
 *::before,
-*::after
-{
+*::after {
   box-sizing: border-box;
 }
 
-*
-{
+* {
   margin: 0;
   padding: 0;
 }
 
-main 
-{
+main {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   perspective: 2px;
 }
 
-section 
-{
+section {
   transform-style: preserve-3d;
   position: relative;
   height: 100vh;
@@ -235,27 +286,23 @@ section
   color: #846267;
 }
 
-section h1
-{
+section h1 {
   text-align: center;
   font-size: 4rem;
   font-family: sans-serif;
 }
 
-.no-parallax 
-{
+.no-parallax {
   background-color: #EAE1D9;
   z-index: 999;
 }
 
-.parallax h1 
-{
+.parallax h1 {
   width: 60%;
   font-size: 2rem;
 }
 
-.parallax::after 
-{
+.parallax::after {
   content: " ";
   position: absolute;
   top: 0;
@@ -267,31 +314,27 @@ section h1
   z-index: -1;
 }
 
-.bg::after 
-{
+.bg::after {
   background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("./assets/panel.jpg");
   background-size: cover;
 }
-.bg1::after 
-{
+
+.bg1::after {
   background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("./assets/termopanel.jpg");
   background-size: cover;
 }
-.bg2::after 
-{
+
+.bg2::after {
   background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("./assets/led.jpg");
   background-size: cover;
 }
 
-@media screen and (min-width: 768px) 
-{
-  section h1 
-  {
+@media screen and (min-width: 768px) {
+  section h1 {
     font-size: 8rem;
   }
-  
-  .parallax h1 
-  {
+
+  .parallax h1 {
     font-size: 4rem;
   }
 }
@@ -302,19 +345,24 @@ section h1
 /* Contenedor general */
 .container {
   overflow-y: auto;
-   position: relative;
-    width: 100%;
-    max-width: 500px; /* Ajusta el tamaño máximo según tus necesidades */
-    margin: auto;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  /* Ajusta el tamaño máximo según tus necesidades */
+  margin: auto;
 
-  
+
 }
+
 .container-scroll {
   position: relative;
   flex-direction: column;
-  min-height: 100vh;  /* Asegura que siempre ocupe al menos la altura del viewport */
-  padding-bottom: 150px; /* Añade espacio al final para el footer */
-  box-sizing: border-box; /* Asegura que el padding esté incluido en el tamaño */
+  min-height: 100vh;
+  /* Asegura que siempre ocupe al menos la altura del viewport */
+  padding-bottom: 150px;
+  /* Añade espacio al final para el footer */
+  box-sizing: border-box;
+  /* Asegura que el padding esté incluido en el tamaño */
   justify-content: space-between;
 }
 
@@ -323,22 +371,25 @@ section h1
   font-family: 'Helvetica', sans-serif;
   font-weight: 200;
   font-size: 2.5rem;
-  min-height: 100vh; /* Asegura que la sección ocupe al menos la altura del viewport */
+  min-height: 100vh;
+  /* Asegura que la sección ocupe al menos la altura del viewport */
   display: flex;
   align-items: center;
   justify-content: center;
   color: #846267;
   margin-bottom: 20px;
-  padding: 20px; /* Añade un poco de padding para evitar que el contenido toque los bordes */
+  padding: 20px;
+  /* Añade un poco de padding para evitar que el contenido toque los bordes */
   box-sizing: border-box;
-  overflow: visible; /* Asegura que no haya corte de contenido */
+  overflow: visible;
+  /* Asegura que no haya corte de contenido */
   height: auto;
 }
 
 /* Sección violeta */
 #sectionPin-scroll {
   background-color: #EAE1D9;
-  height: 80vh; /* Ajusta el valor para que toda la imagen se vea */
+  height: 80vh;/* Ajusta el valor para que toda la imagen se vea */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -347,16 +398,20 @@ section h1
 
 /* Envoltura para el scroll */
 .pin-wrap-scroll {
-  height: auto; /* Permite que el contenido crezca dinámicamente */
+  height: auto;
+  /* Permite que el contenido crezca dinámicamente */
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
   align-items: center;
   color: #212321;
-  width: calc(100vw * 3); /* Ajusta para 3 imágenes */
+  width: calc(100vw * 3);
+  /* Ajusta para 3 imágenes */
   white-space: nowrap;
-  padding: 0; /* Elimina padding */
-  box-sizing: border-box; /* Asegura que todo se respete dentro del tamaño del contenedor */
+  padding: 0;
+  /* Elimina padding */
+  box-sizing: border-box;
+  /* Asegura que todo se respete dentro del tamaño del contenedor */
 }
 
 /* Estilo para las imágenes */
@@ -375,34 +430,49 @@ section h1
 .text-box {
   font-family: 'Helvetica', sans-serif;
   display: inline-block;
-  width: 80%; /* Ajusta el tamaño de la caja de texto */
-  padding-right: 50px; /* Añade espacio a la derecha del texto */
-  font-size: 2.5rem; /* Ajusta el tamaño de la fuente */
-  line-height: 1.8; /* Mejora la legibilidad */
-  white-space: normal; /* Permite que el texto ocupe múltiples líneas */
-  word-wrap: break-word; /* Permite que las palabras largas se rompan y no desborden el contenedor */
-  overflow-wrap: break-word; /* Lo mismo que word-wrap, para navegadores modernos */
-  max-width: 800px; /* Limita el ancho del texto a una caja de 800px */
-  height: auto; /* Permite que el texto ocupe varias líneas */
+  width: 80%;
+  /* Ajusta el tamaño de la caja de texto */
+  padding-right: 50px;
+  /* Añade espacio a la derecha del texto */
+  font-size: 2.5rem;
+  /* Ajusta el tamaño de la fuente */
+  line-height: 1.8;
+  /* Mejora la legibilidad */
+  white-space: normal;
+  /* Permite que el texto ocupe múltiples líneas */
+  word-wrap: break-word;
+  /* Permite que las palabras largas se rompan y no desborden el contenedor */
+  overflow-wrap: break-word;
+  /* Lo mismo que word-wrap, para navegadores modernos */
+  max-width: 800px;
+  /* Limita el ancho del texto a una caja de 800px */
+  height: auto;
+  /* Permite que el texto ocupe varias líneas */
 }
 
 
 /*Pie de pagina*/
 footer {
-  background-color: #1B2432; /* Color de fondo */
-  color: #846267; /* Color de texto*/
+  background-color: #1B2432;
+  /* Color de fondo */
+  color: #846267;
+  /* Color de texto*/
   padding: 20px 0;
   text-align: center;
   width: 100%;
-  min-height: 120px; /* Asegura que tenga una altura mínima */
+  min-height: 120px;
+  /* Asegura que tenga una altura mínima */
   box-sizing: border-box;
-  position: relative; /* Asegura que sea parte del flujo de la página */
-  bottom: 0; /* Asegura que se quede al final */
+  position: relative;
+  /* Asegura que sea parte del flujo de la página */
+  bottom: 0;
+  /* Asegura que se quede al final */
 
 }
 
 .footer-content {
-  max-width: 1200px; /* Para limitar el contenido dentro de un ancho máximo */
+  max-width: 1200px;
+  /* Para limitar el contenido dentro de un ancho máximo */
   margin: 0 auto;
   padding: 10px;
 }
@@ -425,7 +495,7 @@ footer .social-icons a {
 }
 
 footer .social-icons a:hover {
-  color:  #EAE1D9;
+  color: #EAE1D9;
 }
 
 footer .payment-methods img {
@@ -442,30 +512,43 @@ footer .payment-methods img {
   display: inline-block;
 }
 
+/* Alinear y centrar los elementos dentro de .input-group */
 .input-group {
   display: flex;
   align-items: center;
+  gap: 5px; /* Espacio entre los botones y el número */
 }
 
+/* Estilo para los botones de aumento y disminución de cantidad */
+.quantity-decrease, .quantity-increase {
+  font-size: 14px;
+  padding: 3px 6px;
+}
+
+/* Estilo para el número de cantidad */
 .quantity {
-  margin: 0 10px; /* Aumenta el espacio entre los botones + y - */
-  font-size: 1rem;
+  min-width: 20px; /* Asegura que haya suficiente espacio para el número */
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .cart-dropdown {
   display: none;
   position: absolute;
-  top: 50px;
-  right: 0;
+  top: 100%;
+  left:50%;
+  transform: translateX(-50%); /* Ajuste para centrar completamente */
   background-color: #EAE1D9;
   border-radius: 10px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  width: 20px; /* Aumentar el ancho */
+  width: 420px;/* Aumentar el ancho */
   max-height: 400px;
   overflow-y: auto;
   z-index: 1000;
 }
+
 
 .cart-dropdown h3 {
   margin-top: 0;
@@ -480,13 +563,15 @@ footer .payment-methods img {
 }
 
 #cart-icon {
-  color: #846267; /* Color base */
+  color: #846267;
+  /* Color base */
   font-size: 20px;
   cursor: pointer;
 }
 
 #cart-icon:hover {
-  color: #EAE1D9; /* Color al pasar el cursor */
+  color: #EAE1D9;
+  /* Color al pasar el cursor */
 }
 
 .product-image {
@@ -549,7 +634,8 @@ footer .payment-methods img {
 
 .search-dropdown {
   position: absolute;
-  top: 170px; /* Ajusta según sea necesario */
+  top: 170px;
+  /* Ajusta según sea necesario */
   right: 10px;
   width: 200px;
   background-color: #fff;
@@ -560,12 +646,15 @@ footer .payment-methods img {
 /*Menu desplegable celu*/
 /* Ajustes para el menú de navegación móvil */
 .mobile-menu-toggle {
-  display: none; /* Oculto en pantallas de escritorio */
+  display: none;
+  /* Oculto en pantallas de escritorio */
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #2A2A2A; /* Color de fondo */
-  color: #846267; /* Color del ícono */
+  background-color: #2A2A2A;
+  /* Color de fondo */
+  color: #846267;
+  /* Color del ícono */
   align-items: center;
   justify-content: center;
   border: 2px solid #EAE1D9;
@@ -573,14 +662,17 @@ footer .payment-methods img {
   cursor: pointer;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
+
 .icon-circle:hover {
-  color: #EAE1D9; /* Color al pasar el cursor */
+  color: #EAE1D9;
+  /* Color al pasar el cursor */
   background-color: #846267;
 }
 
 
 .mobile-nav {
-  display: none; /* Oculto por defecto */
+  display: none;
+  /* Oculto por defecto */
   position: absolute;
   top: 70px;
   right: 15px;
@@ -616,60 +708,62 @@ footer .payment-methods img {
 }
 
 @media (max-width: 768px) {
+
   /* Ocultar el menú de navegación de escritorio y mostrar el de móvil */
   .desktop-nav {
-      display: none;
+    display: none;
   }
 
   .mobile-menu-toggle {
-      display: block; /* Mostrar ícono de menú móvil */
+    display: block;
+    /* Mostrar ícono de menú móvil */
   }
 
   /* Mostrar el menú de navegación móvil cuando esté activo */
   .mobile-nav.active {
-      display: block;
+    display: block;
   }
 
   /* Ajustar el tamaño de los elementos en pantallas pequeñas */
   header {
-      padding: 10px;
-      flex-direction: column;
+    padding: 10px;
+    flex-direction: column;
   }
 
   .logo img {
-      width: 180px;
+    width: 180px;
   }
 
   .contenido-texto #Título {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 
   .contenido-texto #Explicacion {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   /* Ajustes para el carrusel en pantallas móviles */
   .carousel-item img {
-      width: 100%;
-      height: auto;
+    width: 100%;
+    height: auto;
   }
 
   /* Ajustar el botón principal */
   .contenedor-boton {
-      margin-top: 20px;
+    margin-top: 20px;
   }
 
   .boton {
-      padding: 8px 16px;
+    padding: 8px 16px;
   }
 
   /* Ajustes para el footer en pantallas pequeñas */
   footer {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .social-icons {
-      margin-top: 10px;
+    margin-top: 10px;
   }
 }
