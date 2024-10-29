@@ -65,7 +65,8 @@ nav ul li a {
     text-align: center;
     z-index: 1;
     color: #212321;
-    padding: 20px;
+    padding: 10px;
+    box-sizing: border-box;
     background-color: rgba(256, 256, 256, 0.8); /* Fondo semitransparente */
 }
 /* Sección de Bienvenida */
@@ -84,8 +85,8 @@ nav ul li a {
 
 /* Ajustes para reducir el tamaño del texto si excede el espacio */
 .contenido-texto p {
-  font-size: calc(1.5rem + 0.5vw); /* Ajusta el tamaño de la fuente según el ancho de la ventana */
-  line-height: 2.0;
+  font-size: calc(0.1vw + 0.1vh + 0.5rem); /* Tamaño responsivo */
+  max-width: 90%;
 }
 
 /* Contenedor del Botón */
@@ -112,10 +113,11 @@ nav ul li a {
 
 /* Carrusel de imágenes */
 .carousel-item img {
-    width: 700px;  /* Ancho fijo */
-    height: 700px; /* Alto fijo */
+    width: 100%;  /* Ancho fijo */
+    height: auto; /* Alto fijo */
     object-fit: contain; /* Asegura que la imagen no se recorte */
-    margin: 0 auto;
+    position: relative;;
+    display:block;
 }
 /* Ajuste del carrusel para pantallas pequeñas */
 .carousel-inner{
@@ -124,7 +126,7 @@ nav ul li a {
 }
 .carousel-inner img {
   height: auto;
-  max-height: 60vh; /* Limita la altura de la imagen en móvil */
+  max-height: 80vh; /* Limita la altura de la imagen en móvil */
   object-fit: cover;
 }
 
@@ -300,10 +302,10 @@ section h1
 /* Contenedor general */
 .container {
   overflow-y: auto;
-  position: relative;
-  width: 100%;
-  max-width: 500px; /* Ajusta el tamaño máximo según tus necesidades */
-  margin: auto;
+   position: relative;
+    width: 100%;
+    max-width: 500px; /* Ajusta el tamaño máximo según tus necesidades */
+    margin: auto;
 
   
 }
