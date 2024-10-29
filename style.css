@@ -53,21 +53,24 @@ nav ul li a {
 .icons a:hover {
     color: #EAE1D9; /* Color al pasar el cursor sobre los iconos */
 }
-.contenido-texto{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 1;
-    color: #212321;
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: rgba(256, 256, 256, 0.8); /* Fondo semitransparente */
+.contenido-texto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  color: #212321;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente con más opacidad */
 }
 /* Sección de Bienvenida */
 #Título {
@@ -85,8 +88,8 @@ nav ul li a {
 
 /* Ajustes para reducir el tamaño del texto si excede el espacio */
 .contenido-texto p {
-  font-size: calc(0.1vw + 0.1vh + 0.5rem); /* Tamaño responsivo */
-  max-width: 90%;
+  font-size: calc(0.1vw + 0.1vh + 0.9rem); /* Tamaño responsivo */
+  max-width: 80%;
 }
 
 /* Contenedor del Botón */
@@ -115,7 +118,7 @@ nav ul li a {
 .carousel-item img {
     width: 100%;  /* Ancho fijo */
     height: auto; /* Alto fijo */
-    object-fit: contain; /* Asegura que la imagen no se recorte */
+    object-fit: cover; /* Asegura que la imagen no se recorte */
     position: relative;;
     display:block;
 }
