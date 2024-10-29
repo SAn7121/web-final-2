@@ -30,22 +30,22 @@ document.addEventListener('DOMContentLoaded', function () {
         let pinWrap = document.querySelector(".pin-wrap-scroll");
         let pinWrapWidth = pinWrap.scrollWidth;
         let horizontalScrollLength = pinWrapWidth - window.innerWidth;
-
-        // Pinning and horizontal scrolling
+    
+        // Actualización del ScrollTrigger
         gsap.to(".pin-wrap-scroll", {
             scrollTrigger: {
-                scroller: pageContainer, // Locomotive-scroll
+                scroller: pageContainer,
                 scrub: true,
                 trigger: "#sectionPin-scroll",
                 pin: true,
-                start: "top top",
-                end: () => `+=${horizontalScrollLength}`, // Duración del scroll horizontal
+                start: "top 26%",//ajusto inicio scroll
+                end: () => `+=${horizontalScrollLength}`,
                 anticipatePin: 1
             },
             x: -horizontalScrollLength,
             ease: "none"
         });
-
+    
         ScrollTrigger.addEventListener("refresh", () => scroller.update());
         ScrollTrigger.refresh();
     });

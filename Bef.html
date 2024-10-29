@@ -26,7 +26,7 @@
         </div>
 
         <!-- Menú de Navegación -->
-        <nav>
+        <nav class="desktop-nav">
             <ul class="icons">
                 <li><a href="Sim.html">Simulador</a></li>
                 <li><a href="TEC.html">Tecnologias</a></li>
@@ -34,7 +34,27 @@
             </ul>
         </nav>
 
-         <!-- Iconos de Carrito y Búsqueda -->
+        <!-- Icono de menú para dispositivos móviles -->
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Menú de Navegación Móvil (Oculto inicialmente) -->
+        <nav id="mobile-nav" class="mobile-nav">
+            <ul class="icons">
+                <li><a href="Sim.html">Simulador</a></li>
+                <li><a href="TEC.html">Tecnologías</a></li>
+                <li><a href="Bef.html">Beneficios</a></li>
+            </ul>
+        </nav>
+
+        <script>
+            document.getElementById("mobile-menu-toggle").addEventListener("click", function () {
+                document.getElementById("mobile-nav").classList.toggle("active");
+            });
+        </script>
+
+        <!-- Iconos de Carrito y Búsqueda -->
         <div class="icons">
             <div class="cart-container">
                 <button id="cart-icon" class="btn btn-outline-secondary rounded-circle">
@@ -53,41 +73,45 @@
                                     Eficiencia Energetica</span>
                                 <p class="mb-0">$40,000</p>
                                 <div class="input-group mt-1">
-                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm"
+                                        disabled>-</button>
                                     <span class="quantity">0</span>
-                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="40000">+</button>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm"
+                                        data-price="40000">+</button>
                                     <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
                                 </div>
                             </div>
                         </li>
                         <li class="cart-item d-flex align-items-center mb-3">
                             <img src="https://via.placeholder.com/50" alt="Curso de
-                            Instalacion Paneles Solares"
-                                class="me-3 img-thumbnail">
+                        Instalacion Paneles Solares" class="me-3 img-thumbnail">
                             <div>
                                 <span class="product-name text-primary fw-bold" style="cursor: pointer;">Curso de
                                     Instalacion Paneles Solares</span>
                                 <p class="mb-0">$80,000</p>
                                 <div class="input-group mt-1">
-                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm"
+                                        disabled>-</button>
                                     <span class="quantity">0</span>
-                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="80000">+</button>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm"
+                                        data-price="80000">+</button>
                                     <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
                                 </div>
                             </div>
                         </li>
                         <li class="cart-item d-flex align-items-center mb-3">
                             <img src="https://via.placeholder.com/50" alt="Curso
-                            ProAdventage"
-                                class="me-3 img-thumbnail">
+                        ProAdventage" class="me-3 img-thumbnail">
                             <div>
                                 <span class="product-name text-primary fw-bold" style="cursor: pointer;">Curso
                                     ProAdventage</span>
                                 <p class="mb-0">$85,000</p>
                                 <div class="input-group mt-1">
-                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm" disabled>-</button>
+                                    <button class="quantity-decrease btn btn-outline-secondary btn-sm"
+                                        disabled>-</button>
                                     <span class="quantity">0</span>
-                                    <button class="quantity-increase btn btn-outline-secondary btn-sm" data-price="85000">+</button>
+                                    <button class="quantity-increase btn btn-outline-secondary btn-sm"
+                                        data-price="85000">+</button>
                                     <button class="btn btn-outline-danger ms-2 remove-from-cart">Quitar</button>
                                 </div>
                             </div>
@@ -107,6 +131,7 @@
             </div>
         </div>
     </header>
+
 
     <!-- Efecto parallax -->
     <main>

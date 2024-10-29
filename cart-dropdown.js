@@ -13,11 +13,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Palabras clave y sus redirecciones
     const searchKeywords = {
         'curso': 'index.html',
+        'cu': 'index.html',
+        'cur': 'index.html',
         'tecnologia': 'TEC.html',
+        'tecno': 'TEC.html',
+        'tec': 'TEC.html',
+        'te': 'TEC.html',
+        'tecnologi': 'TEC.html',
+        'tecnolo': 'TEC.html',
         'simulacion': 'Sim.html',
+        'sim': 'Sim.html',
+        'si': 'Sim.html',
+        'simula': 'Sim.html',
+        'simulac': 'Sim.html',
         'beneficios': 'Bef.html',
+        'benefi': 'Bef.html',
+        'ben': 'Bef.html',
+        'be': 'Bef.html',
+        'benefic': 'Bef.html',
         'eficiencia': 'TEC.html', // Ejemplo adicional
+        'efi': 'TEC.html',
+        'efici': 'TEC.html',
+        'eficienci': 'TEC.html',
+        'eficien': 'TEC.html',
+        'ef': 'TEC.html',
         'instalacion': 'Sim.html', // Ejemplo adicional
+        'insta': 'Sim.html',
+        'ins': 'Sim.html',
+        'instala': 'Sim.html',
+        'instalaci': 'Sim.html',
     };
 
     // Mostrar/Ocultar el menú desplegable al hacer clic en el icono de búsqueda
@@ -31,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Enter') {
             const searchTerm = searchInput.value.toLowerCase();
             const page = searchKeywords[searchTerm];
-            
+
             if (page) {
                 window.location.href = page;
             }
@@ -42,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         }
-        
+
     });
 
     // Mostrar/Ocultar el menú desplegable al hacer clic en el icono del carrito
@@ -58,16 +82,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const quantityDisplay = button.previousElementSibling;
             let quantity = parseInt(quantityDisplay.textContent);
 
-            // Incrementar la cantidad y el total
-            quantity++;
-            quantityDisplay.textContent = quantity;
-            total += price;
-            totalAmount.textContent = total.toFixed(2);
+            if (!isNaN(price) && !isNaN(quantity)) {
+                // Incrementar la cantidad y el total
+                quantity++;
+                quantityDisplay.textContent = quantity;
+                total += price;
+                totalAmount.textContent = total.toFixed(2);
 
-            // Habilita el botón "-" si la cantidad es mayor a 0
-            const decreaseButton = button.previousElementSibling.previousElementSibling;
-            if (quantity > 0) {
-                decreaseButton.disabled = false;
+                // Habilita el botón "-" si la cantidad es mayor a 0
+                const decreaseButton = button.previousElementSibling.previousElementSibling;
+                if (quantity > 0) {
+                    decreaseButton.disabled = false;
+                }
             }
         });
     });
@@ -75,19 +101,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Evento para reducir la cantidad al hacer clic en "-", sin permitir valores negativos
     document.querySelectorAll('.quantity-decrease').forEach(button => {
         button.addEventListener('click', () => {
-            const price = parseFloat(button.nextElementSibling.getAttribute('data-price'));
+            // Encuentra el botón de incremento correspondiente para obtener el precio
+            const increaseButton = button.nextElementSibling.nextElementSibling;
+            const price = parseFloat(increaseButton.getAttribute('data-price'));
             const quantityDisplay = button.nextElementSibling;
             let quantity = parseInt(quantityDisplay.textContent);
 
-            // Asegurarse de que la cantidad no baje de 0
-            if (quantity > 0) {
+            console.log("Precio:", price);
+            console.log("Cantidad antes de reducir:", quantity);
+
+            if (!isNaN(price) && !isNaN(quantity) && quantity > 0) {
+                // Asegurarse de que la cantidad no baje de 0
                 quantity--;
                 quantityDisplay.textContent = quantity;
                 total -= price;
 
-                // Evitar que el total sea negativo
-                if (total < 0) total = 0;
+                // Evitar que el total sea negativo o NaN
+                if (total < 0 || isNaN(total)) total = 0;
                 totalAmount.textContent = total.toFixed(2);
+
+                console.log("Cantidad después de reducir:", quantity);
+                console.log("Total actualizado:", total);
             }
 
             // Desactiva el botón "-" si la cantidad es 0
@@ -105,19 +139,22 @@ document.addEventListener('DOMContentLoaded', () => {
             let quantity = parseInt(quantityDisplay.textContent);
             const price = parseFloat(button.previousElementSibling.getAttribute('data-price'));
 
-            // Restablecer la cantidad a 0 y ajustar el total
-            total -= price * quantity;
-            quantityDisplay.textContent = '0';
+            if (!isNaN(price) && !isNaN(quantity)) {
+                // Restablecer la cantidad a 0 y ajustar el total
+                total -= price * quantity;
+                quantityDisplay.textContent = '0';
 
-            // Evitar que el total sea negativo
-            if (total < 0 || isNaN(total)) total = 0;
-            totalAmount.textContent = total.toFixed(2);
+                // Evitar que el total sea negativo o NaN
+                if (total < 0 || isNaN(total)) total = 0;
+                totalAmount.textContent = total.toFixed(2);
 
-            // Desactivar el botón "-" después de quitar el producto
-            const decreaseButton = item.querySelector('.quantity-decrease');
-            decreaseButton.disabled = true;
+                // Desactivar el botón "-" después de quitar el producto
+                const decreaseButton = item.querySelector('.quantity-decrease');
+                decreaseButton.disabled = true;
+            }
         });
     });
+
 
     // SweetAlert para mostrar detalles del producto al hacer clic en el nombre
     document.querySelectorAll('.product-name').forEach(item => {
