@@ -118,6 +118,10 @@ nav ul li a {
     margin: 0 auto;
 }
 /* Ajuste del carrusel para pantallas pequeñas */
+.carousel-inner{
+  max-height: 80vh; /* Limita la altura del carrusel para que no ocupe toda la pantalla */
+  overflow: hidden;
+}
 .carousel-inner img {
   height: auto;
   max-height: 60vh; /* Limita la altura de la imagen en móvil */
@@ -163,12 +167,18 @@ footer .payment-methods img {
 }
 
 @media (max-width: 768px) {
+
+  .footer-content {
+    padding: 10px;
+    text-align: center;
+  }
   .carousel-inner img {
-      height: auto;
-      max-height: 50vh; /* Reducir aún más la altura en pantallas pequeñas */
+    height: auto; /* Ajuste para que no bloquee contenido en móviles */
+    max-height: 50vh; /* Asegura que no ocupe demasiado espacio en vertical */
   }
 
   .contenido-texto {
+      margin-top: 5px;
       padding: 5px;
   }
 
@@ -292,6 +302,9 @@ section h1
 
 /* Estilos generales */
 /* Contenedor general */
+.container {
+  overflow-y: auto;
+}
 .container-scroll {
   position: relative;
   flex-direction: column;
