@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 quantity++;
                 quantityDisplay.textContent = quantity;
                 total += price;
-                totalAmount.textContent = total.toFixed(2);
+                totalAmount.textContent = `$${total.toFixed(2)}`;;
 
                 // Habilita el botón "-" si la cantidad es mayor a 0
                 const decreaseButton = button.previousElementSibling.previousElementSibling;
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Evitar que el total sea negativo o NaN
                 if (total < 0 || isNaN(total)) total = 0;
-                totalAmount.textContent = total.toFixed(2);
+                totalAmount.textContent = `$${total.toFixed(2)}`;
 
                 console.log("Cantidad después de reducir:", quantity);
                 console.log("Total actualizado:", total);
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Evitar que el total sea negativo o NaN
                 if (total < 0 || isNaN(total)) total = 0;
-                totalAmount.textContent = total.toFixed(2);
+                totalAmount.textContent = `$${total.toFixed(2)}`;;
 
                 // Desactivar el botón "-" después de quitar el producto
                 const decreaseButton = item.querySelector('.quantity-decrease');
@@ -211,16 +211,20 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Añadir el total a pagar en el formulario
+        const formattedTotal = `$${total.toFixed(2)}`;
+
         Swal.fire({
             title: 'Formulario de Pago',
             html: `
-                <input id="nombre" class="swal2-input" placeholder="Nombre">
-                <input id="apellido" class="swal2-input" placeholder="Apellido">
-                <input id="email" type="email" class="swal2-input" placeholder="Correo Electrónico">
-                <input id="tarjeta" class="swal2-input" placeholder="Número de Tarjeta (16 dígitos)">
-                <input id="cvv" class="swal2-input" placeholder="CVV (3-4 dígitos)">
-                <input id="vencimiento" class="swal2-input" placeholder="Fecha de Vencimiento (MM/AA)">
-            `,
+            <input id="nombre" class="swal2-input" placeholder="Nombre">
+            <input id="apellido" class="swal2-input" placeholder="Apellido">
+            <input id="email" type="email" class="swal2-input" placeholder="Correo Electrónico">
+            <input id="tarjeta" class="swal2-input" placeholder="Número de Tarjeta (16 dígitos)" maxlength="19">
+            <input id="cvv" class="swal2-input" placeholder="CVV (3-4 dígitos)">
+            <input id="vencimiento" class="swal2-input" placeholder="Fecha de Vencimiento (MM/AA)">
+            <p>Total a Pagar: <strong>${formattedTotal}</strong></p>
+        `,
             showCancelButton: true,
             confirmButtonText: 'Realizar Compra',
             preConfirm: () => {
@@ -252,12 +256,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Restablecer el total del carrito
                 total = 0;
-                totalAmount.textContent = total.toFixed(2);
+                totalAmount.textContent = `$${total.toFixed(2)}`;
 
                 // Opcional: limpiar cantidades y desactivar botones de disminuir en el carrito
                 document.querySelectorAll('.quantity').forEach(el => el.textContent = '0');
                 document.querySelectorAll('.quantity-decrease').forEach(btn => btn.disabled = true);
             }
         });
+
+        // Agregar el evento de formateo de número de tarjeta después de mostrar el SweetAlert
+        Swal.getPopup().querySelector('#tarjeta').addEventListener('input', (event) => {
+            formatCardNumber(event.target);
+        });
     });
+
+    // Función para formatear el número de tarjeta en grupos de 4 dígitos
+    function formatCardNumber(input) {
+        let value = input.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+        let formattedValue = '';
+        for (let i = 0; i < value.length; i += 4) {
+            if (i > 0) formattedValue += ' ';
+            formattedValue += value.substring(i, i + 4);
+        }
+        input.value = formattedValue;
+    }
 });
