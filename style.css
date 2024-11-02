@@ -215,47 +215,6 @@ footer .payment-methods img {
   margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-
-  .footer-content {
-    padding: 10px;
-    text-align: center;
-  }
-
-  .carousel-inner img {
-    height: auto;
-    /* Ajuste para que no bloquee contenido en móviles */
-    max-height: 50vh;
-    /* Asegura que no ocupe demasiado espacio en vertical */
-  }
-
-  .contenido-texto {
-    margin-top: calc(50px + 1rem);
-    /* Ajusta el valor según la altura del header */
-    padding: 5px;
-  }
-
-  #Título {
-    font-size: 1.3rem;
-  }
-
-  #Explicacion {
-    font-size: 0.9rem;
-  }
-
-  .contenedor-boton .boton {
-    font-size: 0.9rem;
-    padding: 8px 15px;
-  }
-
-  footer .social-icons a {
-    font-size: 1rem;
-  }
-
-  footer .payment-methods img {
-    max-width: 80px;
-  }
-}
 
 /*Bef: Parallax*/
 *,
@@ -329,15 +288,6 @@ section h1 {
   background-size: cover;
 }
 
-@media screen and (min-width: 768px) {
-  section h1 {
-    font-size: 8rem;
-  }
-
-  .parallax h1 {
-    font-size: 4rem;
-  }
-}
 
 /*Tecnologias*/
 
