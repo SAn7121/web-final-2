@@ -1,0 +1,190 @@
+/* Configuración de estilos para móviles */
+
+/* Ajustes generales */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', sans-serif;
+    background-color: #EAE1D9;
+    color: #212321;
+  }
+  
+  /* Encabezado */
+  header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1B2432;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+  
+  /* Navegación */
+  nav ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li a {
+    font-size: 1rem;
+    color: #846267;
+    padding: 8px;
+  }
+  
+  /* Iconos */
+  .icons a {
+    font-size: 18px;
+    color: #846267;
+    margin-left: 10px;
+  }
+  
+  .icons a:hover {
+    color: #EAE1D9;
+  }
+  
+  /* Sección de bienvenida */
+  .contenido-texto {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #Título {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  #Explicacion {
+    font-size: 1rem;
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+  
+  /* Botón */
+  .boton {
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: #A8C8E6;
+    color: #212321;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  
+  .boton:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Carrusel */
+  .carousel-inner {
+    max-height: 50vh;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: #1B2432;
+    color: #EAE1D9;
+  }
+  
+  footer .social-icons a {
+    font-size: 1rem;
+    margin: 0 5px;
+  }
+  
+  /* Parallax - Ajustes para móviles */
+  section h1 {
+    font-size: 2rem;
+  }
+  
+  .parallax h1 {
+    font-size: 1.5rem;
+  }
+  
+  .bg::after,
+  .bg1::after,
+  .bg2::after {
+    background-size: cover;
+  }
+  
+  /* Tecnologías - Ajustes para móviles */
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .container-scroll {
+    padding-bottom: 100px;
+  }
+  
+  .section-scroll {
+    font-size: 1.8rem;
+    padding: 15px;
+  }
+  
+  .scroll-image {
+    width: 80vw;
+    height: 40vh;
+    margin-right: 10px;
+  }
+  
+  .text-box {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* Ajustes adicionales para pantallas pequeñas */
+    
+    .footer-content {
+      padding: 5px;
+    }
+    
+    .carousel-inner img {
+      max-height: 40vh;
+    }
+    
+    .contenido-texto {
+      padding: 5px;
+    }
+  
+    #Título {
+      font-size: 1.2rem;
+    }
+  
+    #Explicacion {
+      font-size: 0.9rem;
+    }
+  
+    .contenedor-boton .boton {
+      font-size: 0.9rem;
+      padding: 8px 10px;
+    }
+  
+    footer .social-icons a {
+      font-size: 0.9rem;
+    }
+  }
