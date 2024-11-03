@@ -158,6 +158,13 @@
         max-height: 50vh; /* Ajusta el valor si es necesario */
 
     }
+    
+    .carousel-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 
     .carousel-item img {
         width: 100%;
