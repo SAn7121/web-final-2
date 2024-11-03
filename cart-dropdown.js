@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalAmount = document.getElementById('total-amount');
 
     let total = 0;
+    let cart={};
 
     const searchIcon = document.getElementById('search-icon');
     const searchDropdown = document.getElementById('search-dropdown');
@@ -75,58 +76,69 @@ document.addEventListener('DOMContentLoaded', () => {
         cartDropdown.style.display = cartDropdown.style.display === 'block' ? 'none' : 'block';
     });
 
+    // Recuperar carrito y total desde localStorage
+    if (localStorage.getItem('cart')) {
+        cart = JSON.parse(localStorage.getItem('cart'));
+        total = parseFloat(localStorage.getItem('total')) || 0;
+        updateCartDisplay();
+    }
+
+    // Función para actualizar el total y guardar en localStorage
+    function updateTotal() {
+        totalAmount.textContent = `$${total.toFixed(2)}`;
+        localStorage.setItem('total', total.toFixed(2));
+    }
+
+    // Función para actualizar la visualización del carrito
+    function updateCartDisplay() {
+        document.querySelectorAll('.cart-item').forEach(item => {
+            const productName = item.querySelector('.product-name').textContent.trim();
+            const quantityDisplay = item.querySelector('.quantity');
+            const decreaseButton = item.querySelector('.quantity-decrease');
+            
+            const productQuantity = cart[productName]?.quantity || 0;
+            quantityDisplay.textContent = productQuantity;
+
+            decreaseButton.disabled = productQuantity === 0;
+        });
+        updateTotal();
+    }
+
     // Evento para incrementar la cantidad al hacer clic en "+"
     document.querySelectorAll('.quantity-increase').forEach(button => {
         button.addEventListener('click', () => {
             const price = parseFloat(button.getAttribute('data-price'));
             const quantityDisplay = button.previousElementSibling;
-            let quantity = parseInt(quantityDisplay.textContent);
+            const productName = button.closest('.cart-item').querySelector('.product-name').textContent.trim();
 
-            if (!isNaN(price) && !isNaN(quantity)) {
-                // Incrementar la cantidad y el total
-                quantity++;
-                quantityDisplay.textContent = quantity;
-                total += price;
-                totalAmount.textContent = `$${total.toFixed(2)}`;;
+            cart[productName] = cart[productName] || { quantity: 0, price };
+            cart[productName].quantity++;
+            quantityDisplay.textContent = cart[productName].quantity;
 
-                // Habilita el botón "-" si la cantidad es mayor a 0
-                const decreaseButton = button.previousElementSibling.previousElementSibling;
-                if (quantity > 0) {
-                    decreaseButton.disabled = false;
-                }
-            }
+            total += price;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
         });
     });
 
-    // Evento para reducir la cantidad al hacer clic en "-", sin permitir valores negativos
+    // Evento para reducir la cantidad al hacer clic en "-"
     document.querySelectorAll('.quantity-decrease').forEach(button => {
         button.addEventListener('click', () => {
-            // Encuentra el botón de incremento correspondiente para obtener el precio
             const increaseButton = button.nextElementSibling.nextElementSibling;
             const price = parseFloat(increaseButton.getAttribute('data-price'));
             const quantityDisplay = button.nextElementSibling;
-            let quantity = parseInt(quantityDisplay.textContent);
+            const productName = button.closest('.cart-item').querySelector('.product-name').textContent.trim();
 
-            console.log("Precio:", price);
-            console.log("Cantidad antes de reducir:", quantity);
-
-            if (!isNaN(price) && !isNaN(quantity) && quantity > 0) {
-                // Asegurarse de que la cantidad no baje de 0
-                quantity--;
-                quantityDisplay.textContent = quantity;
+            if (cart[productName] && cart[productName].quantity > 0) {
+                cart[productName].quantity--;
+                quantityDisplay.textContent = cart[productName].quantity;
                 total -= price;
 
-                // Evitar que el total sea negativo o NaN
-                if (total < 0 || isNaN(total)) total = 0;
-                totalAmount.textContent = `$${total.toFixed(2)}`;
-
-                console.log("Cantidad después de reducir:", quantity);
-                console.log("Total actualizado:", total);
-            }
-
-            // Desactiva el botón "-" si la cantidad es 0
-            if (quantity === 0) {
-                button.disabled = true;
+                if (cart[productName].quantity === 0) {
+                    delete cart[productName];
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartDisplay();
             }
         });
     });
@@ -135,26 +147,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.remove-from-cart').forEach(button => {
         button.addEventListener('click', () => {
             const item = button.closest('.cart-item');
+            const productName = item.querySelector('.product-name').textContent.trim();
             const quantityDisplay = item.querySelector('.quantity');
-            let quantity = parseInt(quantityDisplay.textContent);
-            const price = parseFloat(button.previousElementSibling.getAttribute('data-price'));
 
-            if (!isNaN(price) && !isNaN(quantity)) {
-                // Restablecer la cantidad a 0 y ajustar el total
-                total -= price * quantity;
+            if (cart[productName]) {
+                total -= cart[productName].price * cart[productName].quantity;
+                delete cart[productName];
                 quantityDisplay.textContent = '0';
-
-                // Evitar que el total sea negativo o NaN
-                if (total < 0 || isNaN(total)) total = 0;
-                totalAmount.textContent = `$${total.toFixed(2)}`;;
-
-                // Desactivar el botón "-" después de quitar el producto
-                const decreaseButton = item.querySelector('.quantity-decrease');
-                decreaseButton.disabled = true;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartDisplay();
             }
         });
     });
 
+    // Función para actualizar el total al cargar
+    updateTotal();
 
     // SweetAlert para mostrar detalles del producto al hacer clic en el nombre
     document.querySelectorAll('.product-name').forEach(item => {
@@ -177,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function validateForm(data) {
         const { nombre, apellido, email, tarjeta, cvv, vencimiento } = data;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const cardRegex = /^\d{16}$/;
+        const cardRegex = /^\d{16}$/; // Mantener esta regex
         const cvvRegex = /^\d{3,4}$/;
         const vencimientoRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
 
@@ -189,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Swal.showValidationMessage('Correo electrónico inválido.');
             return false;
         }
-        if (!cardRegex.test(tarjeta)) {
+        if (!cardRegex.test(tarjeta.replace(/\s+/g, ''))) { // Eliminar espacios antes de la validación
             Swal.showValidationMessage('Número de tarjeta inválido. Debe tener 16 dígitos.');
             return false;
         }
@@ -246,21 +253,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 const email = result.value.email; // Obtener el correo electrónico ingresado
-
+        
                 // Confirmación de compra exitosa
                 Swal.fire(
                     'Compra Realizada',
                     `Tu pago se realizó correctamente. Se te ha enviado un mail a ${email} con toda la información correspondiente y las fechas de las inscripciones.`,
                     'success'
                 );
-
-                // Restablecer el total del carrito
+                
+                // Restablecer el total y el carrito en localStorage
                 total = 0;
+                cart = {};  // Limpia el carrito de productos
+                localStorage.setItem('total', '0');
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                // Actualiza el total y el carrito en la interfaz
                 totalAmount.textContent = `$${total.toFixed(2)}`;
-
-                // Opcional: limpiar cantidades y desactivar botones de disminuir en el carrito
-                document.querySelectorAll('.quantity').forEach(el => el.textContent = '0');
+                document.querySelectorAll('.cart-item .quantity').forEach(el => el.textContent = '0');
                 document.querySelectorAll('.quantity-decrease').forEach(btn => btn.disabled = true);
+                
+                // Llama a las funciones para actualizar la visualización del carrito
+                updateTotal();
+                updateCartDisplay();
             }
         });
 
@@ -280,4 +294,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         input.value = formattedValue;
     }
+
+
+    console.log("Total después de compra:", total);
+    console.log("Cart después de compra:", cart);
+    console.log("LocalStorage después de compra:", localStorage.getItem('cart'), localStorage.getItem('total'));
 });
+
