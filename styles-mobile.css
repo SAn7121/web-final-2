@@ -154,14 +154,15 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: auto; /* Ajuste para que tome la altura según el contenido */
-        min-height: 50vh; /* Ajuste mínimo para el tamaño de pantalla pequeño */
+        height: auto; /* Asegúrate de que ocupe toda la altura */
+        max-height: 50vh; /* Ajusta el valor si es necesario */
+
     }
 
     .carousel-item img {
         width: 100%;
-        height: auto; /* Ajusta la altura según el ancho */
-        object-fit: cover; /* Para evitar el recorte en el contenedor */
+        height: 100%;
+        object-fit: contain;
     }
 
     /* Footer */
