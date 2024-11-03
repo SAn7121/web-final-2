@@ -101,7 +101,7 @@
     }
     /* Sección de bienvenida */
     .contenido-texto {
-        min-height: 50vh; /* Ajusta según lo que necesites */
+        min-height: 70vh; /* Ajusta según lo que necesites */
         padding: 20px;
         max-width: 800px;
         text-align: center;
