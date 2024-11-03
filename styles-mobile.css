@@ -126,9 +126,10 @@
 
     /* Botón */
     .contenedor-boton {
-        margin-top: 20px; /* Ajuste para pantallas pequeñas */
+        margin-top: 20px;
         display: flex;
         justify-content: center;
+        width: 100%;
     }
 
     .boton {
@@ -161,6 +162,7 @@
         width: 100%;
         height: auto;
         object-fit: cover;
+        max-height: 50vh; /* Ajusta según lo que necesites */
     }
 
     /* Footer */
