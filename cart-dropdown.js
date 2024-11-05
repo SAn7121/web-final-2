@@ -11,22 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchDropdown = document.getElementById('search-dropdown');
     const searchInput = document.getElementById('search-input');
 
-    // Manejo del evento al hacer clic en el icono de carrito
-    cartIcon.addEventListener("click", () => {
-        // Cambia entre mostrar y ocultar el menú de carrito
-        cartDropdown.classList.toggle("active");
-        // Oculta el menú de búsqueda si está abierto
-        searchDropdown.classList.remove("active"); // Cambia display a ninguna clase activa
-    });
-
-    // Manejo del evento al hacer clic en el icono de búsqueda
-    searchIcon.addEventListener("click", () => {
-        // Cambia entre mostrar y ocultar el menú de búsqueda
-        searchDropdown.classList.toggle("active");
-        // Oculta el menú de carrito si está abierto
-        cartDropdown.classList.remove("active"); // Cambia display a ninguna clase activa
-    });
-
 
     // Palabras clave y sus redirecciones
     const searchKeywords = {
