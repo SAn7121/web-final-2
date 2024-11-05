@@ -105,11 +105,12 @@
 
     /* Sección de bienvenida */
     .contenido-texto {
-        padding-top: 100px;
+        margin-top: 80px; /* Ajusta este valor a la altura de tu header */
         padding: 20px;
         text-align: center;
         max-width: 800px;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #Título {
