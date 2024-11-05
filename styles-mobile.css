@@ -204,4 +204,44 @@
         gap: 5px;
         margin-top: 5px;
     }
+
+    .cart-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left:50%;
+        transform: translateX(-85%); /* Ajuste para mover la posicion del carrito */
+        background-color: #EAE1D9;
+        border-radius: 10px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 5px;
+        width: 420px;/* Aumentar el ancho */
+        max-height: 400px;
+        overflow-y: auto;
+        z-index: 1000;
+      }
+    #cart-dropdown {
+        right: 10px;
+        top: 60px;
+        width: 250px;
+    }
+
+    /* Ajuste del buscador desplegable */
+    #search-dropdown {
+        left: 10px;
+        top: 100px;
+        width: 160px;
+        display: none; /* Oculto hasta que se haga clic */
+    }
+
+    /* Menú de navegación móvil */
+    #mobile-nav.active {
+        position: absolute;
+        top: 105px;
+        left: 0;
+        width: 100%;
+        background-color: #1B2432;
+        z-index: 9;
+        padding: 1em;
+    }
 }
