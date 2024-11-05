@@ -584,14 +584,15 @@ footer .payment-methods img {
   color: #EAE1D9;
 }
 
+
 .search-dropdown {
   position: absolute;
-  top: 170px;
+  top: 40px;
   /* Ajusta según sea necesario */
-  right: 10px;
-  width: 200px;
-  background-color: #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  right: 100px;
+  width: 400px;
+  background-color: #1B2432;
+  box-shadow: 0px 4px 8px rgba(33, 35, 33, 0.1);
 }
 
 .total-pay-container {
