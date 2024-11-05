@@ -92,9 +92,10 @@ nav ul li a {
   text-align: center;
   z-index: 2;
   color: #212321;
+  padding-top: 20px;
   padding: 20px;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.78);
   /* Fondo semitransparente con más opacidad */
 }
 
@@ -104,12 +105,12 @@ nav ul li a {
   font-weight: bold;
   margin-bottom: 10px;
   /* Añade separación entre el título y el texto */
-  line-height: 1.2;
+  line-height: 1.5;
   /* Ajusta el espacio entre líneas */
 }
 
 #Explicacion {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 20px;
   max-width: 90%;
   line-height: 1.5;
