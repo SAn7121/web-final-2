@@ -252,4 +252,36 @@
         z-index: 9;
         padding: 1em;
     }
+    /*Tecnologias*/
+    .scroll-image {
+        display: inline-block;
+        margin-right: 20px; /* Ajusta el espacio entre imágenes */
+        width: 100%; /* Ajusta para que se escale correctamente */
+        max-width: 300px; /* Limita el ancho para evitar cortes */
+        object-fit: cover; /* Ajusta cómo se escala la imagen dentro del contenedor */
+    }
+    .text-box {
+        padding-left: 20px; /* Desplaza el texto hacia la derecha */
+        padding-right: 20px; /* Asegura espacio a la derecha */
+        max-width: 80%; /* Limita el ancho para evitar cortes y mejorar la legibilidad */
+        line-height: 1.5; /* Mejora el espaciado entre líneas */
+    }
+    .pin-wrap-scroll {
+        padding: 0 10px; /* Espacio lateral para evitar cortes */
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px; /* Espacio entre elementos */
+    }
+
+    #sectionPin-scroll {
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    
+    .scroll-image {
+        display: inline-block;
+        width: 80vw; /* Ajusta el tamaño según el diseño deseado */
+        margin-right: 5px;
+    }
 }

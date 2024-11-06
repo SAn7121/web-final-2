@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const pageContainer = document.querySelector(".container-scroll");
 
+    // Detectar si es dispositivo móvil
+    const isMobile = window.innerWidth <= 768;
+
     // SMOOTH SCROLL
     const scroller = new LocomotiveScroll({
         el: pageContainer,
@@ -30,23 +33,34 @@ document.addEventListener('DOMContentLoaded', function () {
         let pinWrap = document.querySelector(".pin-wrap-scroll");
         let pinWrapWidth = pinWrap.scrollWidth;
         let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+
+        // Configuración específica para móvil
+        let startOffset = isMobile ? "top 50%" : "top 26%"; // Ajusta para móvil si es necesario
+        let scrollEnd = isMobile ? horizontalScrollLength * 1.5 : horizontalScrollLength; // Reducir longitud en móvil
     
-        // Actualización del ScrollTrigger
+        // Configuración del ScrollTrigger
         gsap.to(".pin-wrap-scroll", {
             scrollTrigger: {
                 scroller: pageContainer,
                 scrub: true,
                 trigger: "#sectionPin-scroll",
                 pin: true,
-                start: "top 26%",//ajusto inicio scroll
-                end: () => `+=${horizontalScrollLength}`,
+                start: "top 26%", // Usar offset dinámico
+                end: () => `+=${scrollEnd}`, // Usar longitud dinámica
                 anticipatePin: 1
             },
-            x: -horizontalScrollLength,
+            x: -scrollEnd, // Desplazamiento horizontal dinámico
             ease: "none"
         });
     
         ScrollTrigger.addEventListener("refresh", () => scroller.update());
         ScrollTrigger.refresh();
+    });
+
+    // Ajustar el scroll cuando cambia el tamaño de la pantalla
+    window.addEventListener("resize", () => {
+        if ((isMobile && window.innerWidth > 768) || (!isMobile && window.innerWidth <= 768)) {
+            location.reload(); // Recargar para aplicar las configuraciones de nuevo en el contexto adecuado
+        }
     });
 });
