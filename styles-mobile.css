@@ -290,6 +290,7 @@
         font-weight: 50;
         font-size: 1.2rem;
         color: #846267;
+        width: 90%;
         max-width: 800px; /* Limita el ancho del texto */
         margin: 0 auto; /* Centra el contenido */
         padding: 20px;
