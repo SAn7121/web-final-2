@@ -288,14 +288,17 @@
     .credit {
         font-family: 'Helvetica', sans-serif;
         font-weight: 50;
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: #846267;
-        width: 90%;
-        max-width: 800px; /* Limita el ancho del texto */
-        margin: 0 auto; /* Centra el contenido */
         padding: 20px;
+        margin: 0 auto; /* Centra horizontalmente */
         box-sizing: border-box;
-        line-height: 1.6; /* Mejora la legibilidad */
+        max-width: 100%; /* Ajusta el ancho máximo a un 90% de la ventana */
+        text-align: left; /* Alinea el texto a la izquierda */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; /* Alínea el contenido hacia la izquierda */
     }
     
     .section-scroll {
