@@ -285,5 +285,23 @@
         white-space: nowrap;
         padding: 20px 0; /* Espacio superior e inferior para las imágenes */
     }
+    .credit {
+        font-family: 'Helvetica', sans-serif;
+        font-weight: 50;
+        font-size: 1.2rem;
+        min-height: 100vh;
+        /* Asegura que la sección ocupe al menos la altura del viewport */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #846267;
+        margin-bottom: 20px;
+        padding: 20px;
+        /* Añade un poco de padding para evitar que el contenido toque los bordes */
+        box-sizing: border-box;
+        overflow: visible;
+        /* Asegura que no haya corte de contenido */
+        height: auto;
+      }
     
 }
