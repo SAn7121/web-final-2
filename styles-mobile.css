@@ -255,33 +255,35 @@
     /*Tecnologias*/
     .scroll-image {
         display: inline-block;
-        margin-right: 20px; /* Ajusta el espacio entre imágenes */
-        width: 100%; /* Ajusta para que se escale correctamente */
-        max-width: 300px; /* Limita el ancho para evitar cortes */
-        object-fit: cover; /* Ajusta cómo se escala la imagen dentro del contenedor */
+        margin-right: 30px; /* Espacio entre imágenes */
+        width: 100%; /* Ocupa el ancho del contenedor */
+        max-width: 400px; /* Limita el ancho máximo de la imagen */
+        height: auto; /* Ajusta la altura automáticamente */
+        object-fit: contain; /* Muestra la imagen completa sin recortes */
+        border-radius: 15px; /* Bordes redondeados */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar la imagen */
     }
+    
     .text-box {
         padding-left: 20px; /* Desplaza el texto hacia la derecha */
         padding-right: 20px; /* Asegura espacio a la derecha */
         max-width: 80%; /* Limita el ancho para evitar cortes y mejorar la legibilidad */
         line-height: 1.5; /* Mejora el espaciado entre líneas */
     }
+    
     .pin-wrap-scroll {
         padding: 0 10px; /* Espacio lateral para evitar cortes */
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        gap: 20px; /* Espacio entre elementos */
+        gap: 30px; /* Espacio entre elementos */
+        height: 80vh; /* Altura para centrar las imágenes en el contenedor */
     }
-
+    
     #sectionPin-scroll {
         overflow-x: scroll;
         white-space: nowrap;
+        padding: 20px 0; /* Espacio superior e inferior para las imágenes */
     }
     
-    .scroll-image {
-        display: inline-block;
-        width: 80vw; /* Ajusta el tamaño según el diseño deseado */
-        margin-right: 5px;
-    }
 }

@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let horizontalScrollLength = pinWrapWidth - window.innerWidth;
 
         // Configuración específica para móvil
-        let startOffset = isMobile ? "top 50%" : "top 26%"; // Ajusta para móvil si es necesario
+        let isMobile = window.innerWidth < 768; // Define si es móvil basado en el ancho de la ventana
+        let startOffset = isMobile ? "top 14%" : "top 26%"; // Ajusta para móvil 
         let scrollEnd = isMobile ? horizontalScrollLength * 1.5 : horizontalScrollLength; // Reducir longitud en móvil
     
         // Configuración del ScrollTrigger
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrub: true,
                 trigger: "#sectionPin-scroll",
                 pin: true,
-                start: "top 26%", // Usar offset dinámico
+                start: startOffset , // Usar offset dinámico
                 end: () => `+=${scrollEnd}`, // Usar longitud dinámica
                 anticipatePin: 1
             },
