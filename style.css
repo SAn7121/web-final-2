@@ -355,6 +355,7 @@ section h1 {
   padding: 0;
   /* Elimina padding */
   box-sizing: border-box;
+  grid-template-columns: repeat(3, 1fr)
   /* Asegura que todo se respete dentro del tamaño del contenedor */
 }
 
@@ -603,7 +604,7 @@ footer .payment-methods img {
 }
 
 
-/*Menu desplegable celu*/
+/*Menu desplegable celu, se hizo en este y no en styles mobile ya que*/
 /* Ajustes para el menú de navegación móvil */
 .mobile-menu-toggle {
   display: none;
