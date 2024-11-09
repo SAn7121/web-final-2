@@ -13,38 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Palabras clave y sus redirecciones
-    const searchKeywords = {
-        'curso': 'index.html',
-        'cu': 'index.html',
-        'cur': 'index.html',
-        'tecnologia': 'TEC.html',
-        'tecno': 'TEC.html',
-        'tec': 'TEC.html',
-        'te': 'TEC.html',
-        'tecnologi': 'TEC.html',
-        'tecnolo': 'TEC.html',
-        'simulacion': 'Sim.html',
-        'sim': 'Sim.html',
-        'si': 'Sim.html',
-        'simula': 'Sim.html',
-        'simulac': 'Sim.html',
-        'beneficios': 'Bef.html',
-        'benefi': 'Bef.html',
-        'ben': 'Bef.html',
-        'be': 'Bef.html',
-        'benefic': 'Bef.html',
-        'eficiencia': 'TEC.html', // Ejemplo adicional
-        'efi': 'TEC.html',
-        'efici': 'TEC.html',
-        'eficienci': 'TEC.html',
-        'eficien': 'TEC.html',
-        'ef': 'TEC.html',
-        'instalacion': 'Sim.html', // Ejemplo adicional
-        'insta': 'Sim.html',
-        'ins': 'Sim.html',
-        'instala': 'Sim.html',
-        'instalaci': 'Sim.html',
-    };
+    const searchKeywords = [
+        { pattern: /curso|cur|cu/i, page: 'index.html' },
+        { pattern: /tecnologia|tecno|tec|tecnologi|tecnolo|te/i, page: 'TEC.html' },
+        { pattern: /simulacion|simula|simulac|sim|si/i, page: 'Sim.html' },
+        { pattern: /beneficios|benefi|benefic|ben|be/i, page: 'Bef.html' },
+        { pattern: /eficiencia|eficien|eficienci|efici|efi|ef/i, page: 'TEC.html' },
+        { pattern: /instalacion|instala|instalaci|insta|ins/i, page: 'Sim.html' }
+    ];
+    
 
     // Mostrar/Ocultar el menú desplegable al hacer clic en el icono de búsqueda
     searchIcon.addEventListener('click', () => {
@@ -55,20 +32,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Buscar palabra clave y redirigir
     searchInput.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
-            const searchTerm = searchInput.value.toLowerCase();
-            const page = searchKeywords[searchTerm];
-
-            if (page) {
-                window.location.href = page;
+            const searchTerm = searchInput.value; // No es necesario convertir a minúsculas
+            let foundPage = null;
+    
+            // Buscar coincidencia parcial en el arreglo de patrones
+            for (const { pattern, page } of searchKeywords) {
+                if (pattern.test(searchTerm)) {
+                    foundPage = page;
+                    break;
+                }
             }
-            else {
+    
+            if (foundPage) {
+                window.location.href = foundPage;
+            } else {
                 Swal.fire({
                     title: 'No se encontraron resultados para tu búsqueda.',
                     confirmButtonText: "Cerrar"
                 });
             }
         }
-
     });
 
     // Mostrar/Ocultar el menú desplegable al hacer clic en el icono del carrito
