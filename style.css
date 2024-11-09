@@ -667,3 +667,77 @@ footer .payment-methods img {
   color: #EAE1D9;
 }
 
+
+/*Simulador*/
+.simulador-container {
+  text-align: center;
+}
+
+.velocimetro {
+  width: 200px;
+  height: 100px;
+  background: #e0e0e0;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.aguja {
+  width: 4px;
+  height: 100px;
+  background: red;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform-origin: bottom;
+  transform: rotate(-90deg);
+  transition: transform 0.5s ease;
+}
+
+.porcentaje-velocimetro {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+#mensaje-porcentaje {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.opciones-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.opcion {
+  margin: 10px 0;
+}
+
+.simulator-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.simulator-button:hover {
+  background-color: #45a049;
+}
+
