@@ -15,7 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Palabras clave y sus redirecciones
     const searchKeywords = [
         { pattern: /curso|cur|cu/i, page: 'index.html' },
-        { pattern: /tecnologia|tecno|tec|tecnologi|tecnolo|te/i, page: 'TEC.html' },
+        { pattern: /tecnologia|tecno|tec|tecnologi|tecnolo/i, page: 'TEC.html' },
+        { pattern: /termopaneles|termo|ter|termopanel|term/i, page: 'Bef.html' },
+        { pattern: /Iluminacion|il|ilu|ilum|ilumina|ilumiac/i, page: 'Bef.html' },
+        { pattern: /Paneles|pa|pan|panel|sip|paneles sip/i, page: 'Bef.html' },
         { pattern: /simulacion|simula|simulac|sim|si/i, page: 'Sim.html' },
         { pattern: /beneficios|benefi|benefic|ben|be/i, page: 'Bef.html' },
         { pattern: /eficiencia|eficien|eficienci|efici|efi|ef/i, page: 'TEC.html' },
