@@ -29,7 +29,7 @@ header {
 
 /* Logo */
 .logo img {
-  width: 250px;
+  width: 150px;
   /* Ajusta el tamaño según lo necesites */
   height: auto;
   /* Mantiene la proporción de la imagen */
@@ -287,17 +287,6 @@ section h1 {
 
 /* Estilos generales */
 /* Contenedor general */
-.container {
-  overflow-y: auto;
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  /* Ajusta el tamaño máximo según tus necesidades */
-  margin: auto;
-
-
-}
-
 .container-scroll {
   position: relative;
   flex-direction: column;
@@ -419,17 +408,17 @@ footer {
   max-width: 1200px;
   /* Para limitar el contenido dentro de un ancho máximo */
   margin: 0 auto;
-  padding: 10px;
+  padding: 5px;
 }
 
 footer a {
   color: #EAE1D9;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 5px;
 }
 
 footer .social-icons {
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 footer .social-icons a {
@@ -444,8 +433,8 @@ footer .social-icons a:hover {
 }
 
 footer .payment-methods img {
-  max-width: 120px;
-  margin-top: 15px;
+  max-width: 100px;
+  margin-top: 5px;
   vertical-align: middle;
 }
 
