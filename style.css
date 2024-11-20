@@ -191,25 +191,6 @@ nav ul li a {
   margin-top: 10px;
 }
 
-/* Ajuste del footer */
-footer {
-  padding: 10px;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-footer .social-icons a {
-  margin: 0 5px;
-  font-size: 1.2rem;
-}
-
-footer .payment-methods img {
-  max-width: 100px;
-  height: auto;
-  margin-top: 10px;
-}
-
-
 /*Bef: Parallax*/
 *,
 *::before,
@@ -401,7 +382,6 @@ footer {
   /* Asegura que sea parte del flujo de la página */
   bottom: 0;
   /* Asegura que se quede al final */
-
 }
 
 .footer-content {
