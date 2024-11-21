@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Configuración específica para móvil
         let isMobile = window.innerWidth < 768; // Define si es móvil basado en el ancho de la ventana
         let startOffset = isMobile ? "top 14%" : "top 20%"; // Ajusta para móvil 
-        let scrollEnd = isMobile ? horizontalScrollLength * 1.5 : horizontalScrollLength; // Reducir longitud en móvil
+        let scrollEnd = isMobile ? horizontalScrollLength * 1.3 : horizontalScrollLength; // Reducir longitud en móvil
     
         // Configuración del ScrollTrigger
         gsap.to(".pin-wrap-scroll", {
